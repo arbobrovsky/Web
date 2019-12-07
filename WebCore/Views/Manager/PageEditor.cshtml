@@ -1,0 +1,123 @@
+﻿@using Presentation.Models;
+@using Data.Enums;
+
+@model PageEditModel
+
+@{
+    ViewData["Title"] = "PageEditor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model is ProductViewModel)
+{
+    var _currentModel = (ProductViewModel)Model;
+
+    <form action="/Manager/SaveProduct" method="post">
+        <div class="container">
+
+            <h2>@_currentModel.Title</h2>
+            <h1>@_currentModel.DateEditor</h1>
+            <input type="text" hidden="hidden" name="Id" asp-for="@_currentModel.Id" />
+
+            <label asp-for="@_currentModel.Name">Наименование</label>
+            <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+            <input class="uk-input" name="Name" type="text" asp-for="@_currentModel.Name" />
+
+
+            <label asp-for="@_currentModel.Price">Цена</label>
+            <input class="uk-input" name="Price" asp-for="@_currentModel.Price" />
+
+
+            <label asp-for="@_currentModel.TimeWasted">Время на выполнения услуги</label>
+            <input class="uk-input" name="TimeWasted" asp-for="@_currentModel.TimeWasted" />
+
+            <label asp-for="@_currentModel.Description">Описание</label>
+            <textarea class="uk-textarea" name="Description" asp-for="@_currentModel.Description">@_currentModel.Description</textarea>
+
+            <label asp-for="@_currentModel.CategoryId">Категории</label>
+            <select name="CategoryId" asp-for="@_currentModel.CategoryId" class="uk-select" asp-items="@(new SelectList (_currentModel.Categories,"Id","NameCategory"))">
+                @if (_currentModel.Categories != null)
+                {
+                    @*<option selected="selected" disabled="disabled">Выбрана категория  @_currentModel.Category.NameCategory</option>*@
+                }
+                else
+                {
+                    <option selected="selected" disabled="disabled">Выберите категорию</option>
+                }
+            </select>
+            <input class="uk-button uk-button-default" type="submit" value="Добавить/Изменить" />
+            <input class="uk-button uk-button-default" type=submit onclick='this.form.action="/Manager/DeleteProduct";' value="Удалить">
+        </div>
+    </form>
+}
+
+
+@if (Model is CategoryViewModel)
+{
+    var _currentModel = (CategoryViewModel)Model;
+    <form action="/Manager/SaveCategory" method="post">
+        <h2>@_currentModel.Title</h2>
+        <input type="text" hidden="hidden" name="Id" asp-for="@_currentModel.Id" />
+        <label asp-for="@_currentModel.NameCategory">Наименование</label>
+        <input class="uk-input" name="NameCategory" type="text" asp-for="@_currentModel.NameCategory" />
+
+        <label asp-for="@_currentModel.Description">Описание</label>
+        <textarea class="uk-textarea" name="Description" asp-for="@_currentModel.Description">@_currentModel.Description</textarea>
+
+        <input class="uk-button uk-button-default" type="submit" value="Добавить" />
+
+        <input class="uk-button uk-button-default" type=submit onclick='this.form.action="/Manager/DeleteCategory";' value="Удалить">
+
+    </form>
+}
+
+@if (Model is ContactViewModel)
+{
+    var _currentModel = (ContactViewModel)Model;
+    <form action="/Manager/SaveContact" method="post">
+        <h2>@_currentModel.Title</h2>
+
+        <input type="text" hidden="hidden" name="Id" asp-for="@_currentModel.Id" />
+        <label asp-for="@_currentModel.Address">Address</label>
+        <input class="uk-input" name="Address" type="text" asp-for="@_currentModel.Address" />
+        <label asp-for="@_currentModel.Email">Email</label>
+        <input class="uk-input" name="Email" type="text" asp-for="@_currentModel.Email" />
+
+        <label asp-for="@_currentModel.Phone">Phone</label>
+        <input class="uk-input" name="Phone" type="text" asp-for="@_currentModel.Phone" />
+
+        <label asp-for="@_currentModel.TimeWorkStart">TimeWorkStart</label>
+        <input class="uk-input" data-uk-timepicker formaction="" name="TimeWorkStart" type="time" asp-for="@_currentModel.TimeWorkStart" />
+
+        <label asp-for="@_currentModel.TimeWorkDown">TimeWorkDown</label>
+        <input class="uk-input"  name="TimeWorkDown" type="time" asp-for="@_currentModel.TimeWorkDown" />
+
+        <label asp-for="@_currentModel.WorkWeek">WorkWeek</label>
+        <input class="uk-input" name="WorkWeek" type="text" asp-for="@_currentModel.WorkWeek" />
+
+        <label asp-for="@_currentModel.GeoLat">GeoLat</label>
+        <input class="uk-input" name="GeoLat" type="text" asp-for="@_currentModel.GeoLat" />
+
+        <label asp-for="@_currentModel.GeoLat">GeoLong</label>
+        <input class="uk-input" name="GeoLong" type="text" asp-for="@_currentModel.GeoLong" />
+
+
+        <input class="uk-button uk-button-default" type="submit" value="Добавить" /><br />
+        <input class="uk-button uk-button-default" type=submit onclick='this.form.action="/Manager/DeleteContact";' value="Удалить"><br />
+    </form>
+}
+
+@section Scripts {
+    <script>
+        // переопределение валидации на стороне клиента
+        $.validator.methods.range = function (value, element, param) {
+            var globalizedValue = value.replace(",", ".");
+            return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+        }
+
+        $.validator.methods.number = function (value, element) {
+            return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+        }
+    </script>
+}

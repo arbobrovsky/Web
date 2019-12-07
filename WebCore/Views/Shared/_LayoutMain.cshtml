@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_LayoutMain</title>
+
+    <environment include="Development">
+
+        <link href="~/lib/Linearicons/css/icon-font.min.css" rel="stylesheet" />
+        <link href="~/css/WebCore.css" rel="stylesheet" />
+        <link href="~/css/Gallery.css" rel="stylesheet" />
+        <link href="~/lib/uikit-3.1.7/css/uikit.css" rel="stylesheet" />
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=<dd935371-b821-429e-a5ca-49ccdad3684e>&lang=ru_RU" type="text/javascript"></script>
+        <link href="~/lib/uikit-3.1.7/css/uikit-rtl.css" rel="stylesheet" />
+        <link rel="stylesheet" 
+              asp-fallback-href="~/lib/bootstrap/css/bootstrap.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
+    </environment>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header-wrapper">
+            <div class="top-bar">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="unit unit-spacing-xs-2 align-items-center">
+                                <div class="unit-left"><span><svg class="lnr lnr-map-marker"><use xlink:href="#lnr-map-marker"></use></svg></span></div>
+                                <div class="unit-body"><a href="#"> Россия, Московская обл., 142770<br>ул. Липовый Парк, 8, Коммунарка</a></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 top--info text-left text-center-xs">
+                            <img class="logo" src="~/images/icons/logo-default-231x49.png" />
+                        </div>
+                        <div class="col-sm-4 top--info text-right text-center-xs ">
+                            <button class="btn-booking"  asp-action="Order" asp-controller="Home" onclick='location.href="Home/Order/"'>Онлайн запись</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="/Home">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="/Home/Prices">Услуги и цены</a>
+                        <a class="nav-item nav-link" href="#">Pricing</a>
+                        <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                    </div>
+                </div>
+                <partial name="_LoginPartial" />
+            </nav>
+        </header>
+        <div class="body-content">
+            <div class="container">
+                @RenderBody()
+            </div>
+            <partial name="_CookieConsentPartial" />
+        </div>
+    </div>
+
+    <section id="contact" class="pb-100">
+        <div class="container">
+            <h2 class="text--center uk-padding">Контакты</h2>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="text--center">
+                        <h2>Адрес</h2>
+                        <p class="heading--desc">ул. Липовый Парк, 8, Коммунарка, Московская обл., Россия</p>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="text--center">
+                        <h2>Телефон</h2>
+                        <p class="heading--desc">+7(968)4244420</p>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="text--center">
+                        <h2>Email</h2>
+                        <p class="heading--desc">arbobrovsky@gmail.com</p>
+                    </div>
+                </div>
+                <div class="divider--line"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="YandexMap" class="">
+        <div id="map" style="width:100%; height:400px"></div>
+    </section>
+    <hr />
+
+    <footer>
+        <p>&copy; 2019 - WebCore</p>
+    </footer>
+
+    <script src="~/js/yandex.js"></script>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+        <script src="~/lib/uikit-3.1.7/js/uikit.js"></script>
+        <script src="~/lib/uikit-3.1.7/js/uikit-icons.js"></script>
+        <script src="~/js/Gallery.js"></script>
+        <script src="~/js/GalleryTags.js"></script>
+        <script type='text/jаvascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src="~/lib/Linearicons/js/svgembedder.min.js"></script>
+
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+</html>

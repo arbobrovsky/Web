@@ -1,0 +1,38 @@
+﻿@using Presentation.Models;
+@using Data.Enums;
+
+@model Presentation.Models.PageViewModel
+
+
+@{
+    ViewData["Title"] = "Content";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Список продуктов</h2>
+
+@foreach (var categoryItem in Model.CategoryViewModels)
+{
+    <b>@categoryItem.NameCategory</b>
+    @foreach (var item in Model.ProductViewModels.Where(x => x.CategoryId == categoryItem.Id))
+    {
+    <li><a asp-action="PageEditor" asp-controller="Manager" asp-route-Id="@item.Id" asp-route-pageType="@PageEnum.PageType.Product ">@item.Name</a> </li>
+    }
+}
+<li><a asp-action="PageEditor" asp-controller="Manager" asp-route-pageType="@PageEnum.PageType.Product ">Новая запись</a></li>
+
+
+<h2>Список категории</h2>
+@foreach (var item in Model.CategoryViewModels)
+{
+    <li><a asp-action="PageEditor" asp-controller="Manager" asp-route-Id="@item.Id" asp-route-pageType="@PageEnum.PageType.Category ">ID = @item.Id @item.NameCategory</a></li>
+}
+<li><a asp-action="PageEditor" asp-controller="Manager" asp-route-pageType="@PageEnum.PageType.Category ">Новая запись</a></li>
+
+<h2>Список контактов</h2>
+@foreach (var item in Model.ContactViewModels)
+{
+    <li><a asp-action="PageEditor" asp-controller="Manager" asp-route-Id="@item.Id" asp-route-pageType="@PageEnum.PageType.Contact ">ID = @item.Id @item.Address</a></li>
+}
+<li><a asp-action="PageEditor" asp-controller="Manager" asp-route-pageType="@PageEnum.PageType.Contact ">Новая запись</a></li>
+

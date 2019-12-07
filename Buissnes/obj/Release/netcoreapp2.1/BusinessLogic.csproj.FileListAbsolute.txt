@@ -1,0 +1,12 @@
+D:\Web\WebCore\Buissnes\bin\Release\netcoreapp2.1\BusinessLogic.deps.json
+D:\Web\WebCore\Buissnes\bin\Release\netcoreapp2.1\BusinessLogic.dll
+D:\Web\WebCore\Buissnes\bin\Release\netcoreapp2.1\BusinessLogic.pdb
+D:\Web\WebCore\Buissnes\bin\Release\netcoreapp2.1\Data.dll
+D:\Web\WebCore\Buissnes\bin\Release\netcoreapp2.1\Data.pdb
+D:\Web\WebCore\Buissnes\obj\Release\netcoreapp2.1\BusinessLogic.csprojAssemblyReference.cache
+D:\Web\WebCore\Buissnes\obj\Release\netcoreapp2.1\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Web\WebCore\Buissnes\obj\Release\netcoreapp2.1\BusinessLogic.AssemblyInfoInputs.cache
+D:\Web\WebCore\Buissnes\obj\Release\netcoreapp2.1\BusinessLogic.AssemblyInfo.cs
+D:\Web\WebCore\Buissnes\obj\Release\netcoreapp2.1\BusinessLogic.csproj.CopyComplete
+D:\Web\WebCore\Buissnes\obj\Release\netcoreapp2.1\BusinessLogic.dll
+D:\Web\WebCore\Buissnes\obj\Release\netcoreapp2.1\BusinessLogic.pdb

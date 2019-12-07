@@ -1,0 +1,365 @@
+﻿@model Presentation.Models.OrderViewModel
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderTest</title>
+
+</head>
+<body>
+    <form asp-controller="Home" asp-action="Order" method="post">
+        <input type="hidden" asp-for="@Model.Categories" name="Categories" value="" />
+        <h4 class="text--center">Записаться на посещение </h4>
+        <section class="process-line">
+            <div id="step-1" class='process-line_item'>
+                <!-- success -->
+                <span class="round">
+                    <svg width="21" height="14" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6.80645L7.46809 13L20 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="support-text">
+                        Выбор услуги
+                    </span>
+                </span>
+                <span class="line"></span>
+            </div>
+            <div id="step-2" class='process-line_item'>
+                <!-- success -->
+                <span class="round">
+                    <svg width="21" height="14" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6.80645L7.46809 13L20 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="support-text">
+                        Выбор даты и времени
+                    </span>
+                </span>
+                <span class="line"></span>
+            </div>
+            <div id="step-3" class='process-line_item'>
+                <!-- success -->
+                <span class="round">
+                    <svg width="21" height="14" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6.80645L7.46809 13L20 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="support-text">
+                        Оформление заказа
+                    </span>
+                </span>
+            </div>
+        </section>
+
+        <div class="order-content">
+            <div id="orderServices" style="display:block;" class="step-1">
+                <div class="uk-margin uk-card uk-card-default uk-card-body">
+                    <h2 class="text-center">Выберите услугу</h2>
+                    <div class="accordion">
+                        @foreach (var ICategoryes in Model.Categories)
+                        {
+                            <div class="accordion-item">
+                                <a>@ICategoryes.NameCategory</a>
+                                <div class="content">
+                                    <div class="content-price">
+                                        @foreach (var IProduct in ICategoryes.Products)
+                                        {
+                                            <div class="card-body">
+                                                <div class="uk-grid-small" uk-grid>
+                                                    <div class="uk-width-expand" uk-leader>
+                                                        <input class="checked" type="checkbox" value="@IProduct.Id" name="SelectProductsId" id="box-@IProduct.Id" />
+                                                        <label for="box-@IProduct.Id">@IProduct.Name</label>
+                                                    </div>
+                                                    <div class="price-leader">@IProduct.Price &#8381</div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div id="orderTime" style="display:none;">
+                <div class="uk-margin uk-card uk-card-default uk-card-body">
+                    <h2 class="text-center">Выберите свободную дату </h2>
+                    <div class="form-group">
+                        <span class="field-validation-valid" data-valmsg-for="Date" data-valmsg-replace="true"></span>
+                        <input id="flatpickr1" class="form-control" name="Date" type="text" placeholder="Select Date.." readonly="readonly">
+                        <input type="hidden" id="OrderTime" name="Time" value="" />
+
+                    </div>
+                    <hr />
+                    <div class="content">
+                        <p>Утро</p>
+                        @for (int i = 10; i < 22; i++)
+                        {
+                            <input id="btnClock" class="btn btn-outline-success" onclick="getTime(this) " style="margin-bottom:10px;" type="button" value="@i:00" />
+                            <input id="btnClock" class="btn btn-outline-success " onclick="getTime(this)" style="margin-bottom:10px;" type="button" value="@i:30" />
+                            @if (i == 12)
+                            {
+                                <p>День</p>
+                            }
+                            @if (i == 16)
+                            {
+                                <p>Вечер</p>
+                            }
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <div id="orderUserName" style="display:none;" class="step-3">
+                <div class="uk-margin uk-card uk-card-default uk-card-body">
+                    <h2 class="text-center">Контактные данные</h2>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Имя</label>
+                            <span class="field-validation-valid" data-valmsg-for="CustomerName" data-valmsg-replace="true"></span>
+                            <input type="text" class="form-control" asp-for="@Model.CustomerName" name="CustomerName" id="inputName" placeholder="Представьтесь">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <span class="field-validation-valid" data-valmsg-for="CustomerEmail" data-valmsg-replace="true"></span>
+                            <label for="inputPassword4">Email</label>
+                            <input type="email" asp-for="@Model.CustomerEmail" class="form-control" name="CustomerEmail" id="inputEmail" placeholder="Электронная почта">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="field-validation-valid" data-valmsg-for="CustomerPhone" data-valmsg-replace="true"></span>
+                        <label for="inputPhoneNumber">Телефон</label>
+                        <input type="text" class="form-control" asp-for="@Model.CustomerPhone" name="CustomerPhone" id="inputPhoneNumber" placeholder="Введите контактный телефон">
+                    </div>
+
+                    <div class="form-group">
+                        <span class="field-validation-valid" data-valmsg-for="CustomerComment" data-valmsg-replace="true"></span>
+                        <label for="inputComment">Комментарий</label>
+                        <textarea type="text"  asp-for="@Model.CustomerComment" maxlength="150" onkeyup="comment_lenght()" class="form-control" name="CustomerComment" id="inputComment" placeholder="Комментарий"></textarea>
+                        <small id="commentHelp"  class="form-text text-muted">Вы ввели символов 0 из 150</small>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <span class="field-validation-valid" data-valmsg-for="TermsAccepted" data-valmsg-replace="true"></span>
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="TermsAccepted" name="TermsAccepted" asp-for="@Model.TermsAccepted" type="checkbox"> Нажимная кнопку "Записаться", <a class="text-info stretched-link">вы соглашаетесь с условиями пользовательского соглашения</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="orderComplite" style="display:none;" class="step-4">
+                <p>W'r did this GRAIT</p>
+            </div>
+            <div class="flex-row d-flex">
+                <button id="btnBack" type="button" style="display:none;" class="btn btn-dark" onclick="">Назад</button>
+                <button id="btnNext" type="button" class="btn btn-success disabled">Далее</button>
+            </div>
+            <button id="btnComplite" style="display:block;" type="submit" class="btn btn-success">Оформить заказ</button>
+        </div>
+
+    </form>
+
+    <script>
+        var CompliteEnable = false;
+        var listDisableHour = [];
+        var parseModelDate = '@Html.Raw(Json.Serialize(Model.OrderingTime))';
+        var dateObject = JSON.parse(parseModelDate);
+
+        $('#flatpickr1').flatpickr({
+            minDate: "today",
+            "locale": "ru",
+            dateFormat: "d.m.Y",
+            maxDate: new Date().fp_incr(30),
+            onChange: function (selectedDates, dateStr, instance) {
+                clearButton();
+                listDisableHour = [];
+                CompliteEnable = false;
+                DisableHour(dateStr);
+            },
+        });
+
+
+        let orderServices = document.getElementById("orderServices");
+        let orderTime = document.getElementById("orderTime");
+        let orderUserName = document.getElementById("orderUserName");
+        let orderComplite = document.getElementById("orderComplite");
+        let btnNext = document.getElementById("btnNext");
+        let btnBack = document.getElementById("btnBack");
+        let commentHelp = document.getElementById("commentHelp");
+        let txtComment = document.getElementById("inputComment");
+        let dataPicker = document.getElementById("flatpickr1");
+        let inputTime = document.getElementById("OrderTime");
+        var btnTime = document.querySelectorAll("#btnClock");
+        var steps = [orderServices, orderTime, orderUserName, orderComplite];
+
+
+        function comment_lenght() {
+            commentHelp.innerText = ('Вы ввели символов ' + txtComment.value.length + ' из 150');
+        }
+
+
+
+        if (CompliteEnable) {
+            btnNext.className = 'btn btn-success disabled';
+        }
+
+        var i = 0;
+        btnNext.addEventListener("click", () => {
+            if (CompliteEnable) {
+                if (i != 2) {
+                    steps[i].style.display = "none";
+                    i += 1;
+                    document.getElementById("step-" + i).classList.toggle('success');
+                    steps[i].style.display = "block ";
+                    btnBack.style.display = "block";
+                }
+
+                console.log(CompliteEnable);
+                $(document).ready(function ($) {
+                    $("#inputPhoneNumber").mask("+375 (99) 999-99-99");
+                });
+            }
+            else {
+                alert('Выберите свободную дату и время');
+            }
+            CompliteEnable = false;
+        });
+
+        btnBack.addEventListener("click", () => {
+            CompliteEnable = true;
+                if (i > 0) {
+                    if (i != 0) {
+                        steps[i].style.display = "none";
+                        document.getElementById("step-" + i).classList.toggle('success');
+                        i -= 1;
+                        steps[i].style.display = "block";
+                        if (i == 0) {
+                            btnBack.style.display = "none";
+                        }
+                    }
+                }
+                else
+                    console.log("Ошибка: значение I меньше 0");
+        });
+
+
+        function clearButton() {
+            for (var i = 0; i < btnTime.length; i++) {
+                    btnTime[i].className = 'btn btn-outline-success';
+            }
+        }
+
+        function getTime(value) {
+            for (var i = 0; i < btnTime.length; i++) {
+                if (btnTime[i].className == 'btn btn-success valid') {
+                    btnTime[i].className = 'btn btn-outline-success';
+                }
+            }
+            if (dataPicker.value != '') {
+                if (!listDisableHour.includes(value.value, 0)) {
+                    inputTime.value = value.value;
+                    value.className = 'btn btn-success';
+                    CompliteEnable = true;
+                }
+            }
+            else {
+                alert('Выберите дату');
+            }
+        }
+
+        $(".content-price input[type=checkbox]").on("change", function () {
+            var checkbox = document.querySelectorAll(".content .content-price input[type=checkbox]");
+            if ($(this).prop('checked')) {
+                CompliteEnable = true;
+                btnNext.className = 'btn btn-success';
+                console.log('check');
+            }
+            for (var i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked) {
+                    CompliteEnable = true;
+                    btnNext.className = 'btn btn-success';
+                    break;
+                }
+                else {
+                    console.log('uncheck');
+                    CompliteEnable = false;
+                    btnNext.className = 'btn btn-success disabled';
+                }
+            }
+        });
+
+        function TakeDay(value) {
+            var str = value.split('-');
+            var EditDay = str[2].split('T');
+            var year = str[0];
+            var month = str[1];
+            var day = EditDay[0];
+            var result = day + '.' + month + '.' + year;
+            return result;
+        }
+
+        function TakeHour(value) {
+            var fullHour = (value.slice(11, 20));
+            var hour = fullHour[0];
+            var min = fullHour[1];
+            return (fullHour);
+        }
+
+        function ArrayBooking() {
+            var disable = [];
+            for (var i = 0; i < dateObject.length; i++) {
+                var obj = [];
+                obj.push(TakeDay(dateObject[i].orderingDate));
+                obj.push(TakeHour(dateObject[i].orderingDate));
+                obj.push(dateObject[i].timeWasted);
+                disable.push(obj);
+            }
+            return disable;
+        }
+
+        function DisableHour(value) {
+            var take = ArrayBooking();
+            var date = new Date();
+            var dateAfter = new Date();
+            for (var i = 0; i < take.length; i++) {
+                if (take[i][0] == value) { //ищем дату
+                  //изменяем цвет и блочим
+
+                    var fullTime = (take[i][1]).split(':');
+                    date.setHours(fullTime[0]);
+                    date.setMinutes(fullTime[1]);
+                    dateAfter = date;
+                   // console.log('От ' + date);
+                    dateAfter.setMinutes(take[i][2]);
+                    DisableButton(take[i][1], dateAfter.getHours());
+                    // console.log('До ' + dateAfter + 'Добавлено минут:' + take[i][2]);
+                  // console.log('До ' + date + 'Добавлено минут:' + take[i][2]);
+
+                }
+            }
+        }
+
+        function DisableButton(value, value2) {
+            var btnTime = document.querySelectorAll("#btnClock");
+            var valueEdit = value.slice(0, 5);
+            var valueEdit2 = value2;
+            var IndexStart = 0;
+            var IndexFinish = 0;
+            console.log(valueEdit2);
+            for (var i = 0; i < btnTime.length; i++) {
+                if (btnTime[i].value == valueEdit) {
+                    btnTime[i].className = 'btn btn-outline-warning disabled';
+                    IndexStart = i;
+                }
+                if (((btnTime[i].value).slice(0, 2)) == valueEdit2) {
+                    IndexFinish = i;
+                }
+                //var index = btnTime..indexOf(valueEdit2);
+            }
+            console.log('Страт:' + IndexStart + 'Финиш:' + IndexFinish);
+            for (var i = IndexStart; i < IndexFinish; i++) {
+                listDisableHour.push(btnTime[i].value);
+                btnTime[i].className = 'btn btn-outline-danger disabled';
+            }
+
+        }
+    </script>
+</body>
+</html>

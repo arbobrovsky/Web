@@ -1,0 +1,196 @@
+﻿
+.logo {
+    margin-left: 27%;
+    margin-right: auto;
+}
+
+#header-wrapper {
+    margin-right: auto; /* 1 */
+    margin-left: auto; /* 1 */
+    max-width: 100%; /* 2 */
+    padding-right: 100px; /* 3 */
+    padding-left: 100px; /* 3 */
+}
+
+section {
+    padding-top: 0px;
+    padding-bottom: 15px;
+    overflow: hidden;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.heading .heading--title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 29px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+    font-weight: 700;
+    margin: 0 0 28px;
+    line-height: 1;
+  
+}
+
+
+.mb-70 {
+    margin-bottom: 50px !important;
+}
+
+.text--center {
+    text-align: center !important;
+}
+
+.unit-spacing-xs-2 {
+    margin-bottom: -10px;
+    margin-left: -5px;
+}
+
+.unit {
+    display: flex;
+    flex: 0 1 100%;
+    margin-bottom: -10px;
+    margin-left: -10px;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.lnr {
+    display: inline-block;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.05em;
+}
+
+.lnr-map-marker {
+    color: #9ACD32;
+    font-size: 40px;
+}
+
+.top-bar {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#map-marker {
+    float: left; /* Обтекание картинки текстом */
+    width: 10%;
+}
+
+#AddressTxt {
+    margin-left: 40px; /* Отступ от левого края */
+}
+
+.btn-booking {
+    background: #1AAB8A;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 60px;
+    font-size: 1.6em;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    border-radius: 10px;
+}
+
+    .btn-booking:hover {
+        background: #fff;
+        color: #1AAB8A;
+    }
+
+    .btn-booking:before, button:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2px;
+        width: 0;
+        background: #1AAB8A;
+        transition: 400ms ease all;
+    }
+
+    .btn-booking:after {
+        right: inherit;
+        top: inherit;
+        left: 0;
+        bottom: 0;
+    }
+
+    .btn-booking:hover:before, button:hover:after {
+        width: 100%;
+        transition: 800ms ease all;
+    }
+
+
+#img-about {
+    border-radius: 10px;
+}
+
+.pricing-panel .pricing--heading {
+    font-size: 20px;
+    /*font-weight: 700;*/
+    line-height: 40px;
+    margin-bottom: 0;
+    color: #ffffff;
+    position: relative;
+    float: none;
+    padding-right: 8px;
+    color: #222222;
+}
+
+.pricing--content {
+    display: flex;
+}
+
+.pricing-panel {
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+    margin-bottom: 1px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pricing--divider {
+    height: 27px;
+    border-bottom: 1px dashed #999999;
+    flex-grow: 100;
+}
+
+.pricing-2 .pricing-panel .pricing--heading {
+    color: #222222;
+}
+
+.pricing-panel .price {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    /* font-weight: 700;*/
+    line-height: 40px;
+    text-align: right;
+    float: right;
+    margin-bottom: 0;
+    color: #222222;
+    padding-left: 10px;
+}
+
+.heading--desc {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+}
+
+​
+

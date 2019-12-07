@@ -1,0 +1,11 @@
+D:\Web\WebCore\Data\bin\Debug\netcoreapp2.1\DataEF.deps.json
+D:\Web\WebCore\Data\bin\Debug\netcoreapp2.1\DataEF.runtimeconfig.json
+D:\Web\WebCore\Data\bin\Debug\netcoreapp2.1\DataEF.runtimeconfig.dev.json
+D:\Web\WebCore\Data\bin\Debug\netcoreapp2.1\DataEF.dll
+D:\Web\WebCore\Data\bin\Debug\netcoreapp2.1\DataEF.pdb
+D:\Web\WebCore\Data\obj\Debug\netcoreapp2.1\DataEF.csprojAssemblyReference.cache
+D:\Web\WebCore\Data\obj\Debug\netcoreapp2.1\DataEF.csproj.CoreCompileInputs.cache
+D:\Web\WebCore\Data\obj\Debug\netcoreapp2.1\DataEF.AssemblyInfoInputs.cache
+D:\Web\WebCore\Data\obj\Debug\netcoreapp2.1\DataEF.AssemblyInfo.cs
+D:\Web\WebCore\Data\obj\Debug\netcoreapp2.1\DataEF.dll
+D:\Web\WebCore\Data\obj\Debug\netcoreapp2.1\DataEF.pdb

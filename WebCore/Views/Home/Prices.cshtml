@@ -1,0 +1,42 @@
+﻿@using Presentation.Models;
+@using Data.Enums;
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+@model Presentation.Models.PageViewModel
+
+<div class="text--center uk-padding">
+    <h1 class="heading--title">Услуги и цены</h1>
+    @foreach (var category in Model.CategoryViewModels)
+    {
+        <h2>@category.NameCategory</h2>
+        @foreach (var product in Model.ProductViewModels.Where(x => x.CategoryId == category.Id).OrderByDescending(x => x.Price))
+        {
+            <div class="pricing-panel">
+                <div class="pricing--content">
+                    <h4 class="pricing--heading">@product.Name</h4>
+                    <div class="pricing--divider"></div>
+                    <span class="price">@product.Price &#8381 </span>
+                </div>
+
+            </div>
+        }
+    }
+    <button class="btn-booking">Онлайн запись</button>
+    <div class="divider--line"></div>
+</div>
+
+
+
+
+
+<div class="container">
+
+
+    <!-- .panel end -->
+
+</div>
+

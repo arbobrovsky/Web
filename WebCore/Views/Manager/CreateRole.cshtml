@@ -1,0 +1,16 @@
+﻿@model WebCore.Areas.Identity.Models.RoleViewModel
+@{
+    ViewData["Title"] = "CreateRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-controller="Manager" asp-action="CreateRole" method="post">
+    <div class="form-group">
+        <label for="name">Новая роль</label>
+        <input  name="RoleName" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить</button>
+</form>

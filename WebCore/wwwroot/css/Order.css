@@ -1,0 +1,296 @@
+﻿.process-line {
+    width:100%;
+    justify-content:center;
+    display: flex;
+    align-items: center;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    transition: all 0.25s ease;
+    
+}
+
+.process-line_item {
+    display: flex;
+    align-items: center;
+    transition: all 0.25s ease;
+}
+
+    .process-line_item.success .round {
+        transition: all 0.2s ease 0.4s;
+        border-color: #8ec760;
+    }
+
+        .process-line_item.success .round path {
+            transition: all 0.2s ease 0.4s;
+            stroke: #8ec760;
+        }
+
+    .process-line_item.success .line:before {
+        transition: width 0.35s ease;
+        width: 0;
+    }
+
+    .process-line_item.success .line:after {
+        transition: width 1.5s ease 0.5s;
+        width: 100%;
+    }
+
+    .process-line_item.success .support-text {
+        transition: all 0.2s ease 0.4s;
+        color: #8ec760;
+    }
+
+.support-text {
+    color: #ababab;
+    transition: all 0.2s ease 1.5s;
+    position: absolute;
+    font-size: 14px;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 125%);
+    text-align: center;
+}
+
+.round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 39px;
+    min-width: 39px;
+    max-width: 39px;
+    height: 39px;
+    min-height: 39px;
+    max-height: 39px;
+    border: 2px solid;
+    border-color: #ababab;
+    transition: all 0.2s ease 1.5s;
+    position: relative;
+}
+
+    .round path {
+        stroke: #ababab;
+        transition: all 0.2s ease 1.5s;
+    }
+
+.line {
+    display: flex;
+    height: 2px;
+    min-width: 100px;
+    width: 100%;
+    max-width: 140px;
+    position: relative;
+    background-color: rgba(171, 171, 171, 0.1);
+}
+
+    .line:after {
+        content: '';
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        background-color: #8ec760;
+        transition: width 1.5s ease;
+    }
+
+    .line:before {
+        content: '';
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        background-color: #ababab;
+        transition: width 0.35s ease 1.5s;
+    }
+
+
+#orderServices *, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+#orderServices html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#orderServices body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind', sans-serif;
+    background: #fff;
+    color: #4d5974;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+}
+
+#orderServices .container {
+    margin: 0 auto;
+    padding: 4rem;
+    width: 48rem;
+}
+
+#orderServices h3 {
+    font-size: 1.75rem;
+    color: #151a42;
+    padding: 1.3rem;
+    margin: 0;
+}
+
+#orderServices .accordion a {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    color: #7288a2;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+    #orderServices .accordion a:hover,
+    #orderServices .accordion a:hover::after {
+        cursor: pointer;
+        color: #03b5d2;
+    }
+
+        #orderServices .accordion a:hover::after {
+            border: 1px solid #03b5d2;
+        }
+
+    #orderServices .accordion a.active {
+        color: #03b5d2;
+        border-bottom: 1px solid #03b5d2;
+    }
+
+    #orderServices .accordion a::after {
+        font-family: 'Ionicons';
+        content: "\271A";
+        position: absolute;
+        float: right;
+        right: 1rem;
+        font-size: 1rem;
+        color: #7288a2;
+        padding: 5px;
+        width: 30px;
+        height: 30px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 1px solid #7288a2;
+        text-align: center;
+        line-height: 1;
+        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #orderServices .accordion a.active::after {
+        font-family: 'Ionicons';
+        content: "\2014";
+        color: #03b5d2;
+        line-height: 1;
+        vertical-align: middle;
+        border: 1px solid #03b5d2;
+    }
+
+#orderServices .accordion .content {
+    opacity: 0;
+    padding: 0 1rem;
+    max-height: 0;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+    clear: both;
+    -webkit-transition: all 0.2s ease 0.15s;
+    -o-transition: all 0.2s ease 0.15s;
+    transition: all 0.2s ease 0.15s;
+}
+
+    #orderServices .accordion .content p {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    #orderServices .accordion .content.active {
+        opacity: 1;
+        padding: 1rem;
+        max-height: 100%;
+        -webkit-transition: all 0.35s ease 0.15s;
+        -o-transition: all 0.35s ease 0.15s;
+        transition: all 0.35s ease 0.15s;
+    }
+
+.price-leader {
+    font: 18px/20px 'Open Sans', Arial, sans-serif;
+}
+
+.boxes {
+    margin: auto;
+    padding: 50px;
+    background: #484848;
+}
+
+/*Checkboxes styles*/
+.content-price input[type="checkbox"] {
+    display: none;
+}
+
+    .content-price input[type="checkbox"] + label {
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 20px;
+        font: 18px/20px 'Open Sans', Arial, sans-serif;
+        color: #6c914d;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+
+
+        .content-price input[type="checkbox"] + label:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-price input[type="checkbox"] + label:before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #6c914d;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: .6;
+            -webkit-transition: all .12s, border-color .08s;
+            transition: all .12s, border-color .08s;
+        }
+
+    .content-price input[type="checkbox"]:checked + label:before {
+        width: 10px;
+        top: -5px;
+        left: 5px;
+        border-radius: 0;
+        opacity: 1;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    

@@ -1,0 +1,63 @@
+﻿
+@model Presentation.Models.PageViewModel
+
+@{
+    Layout = "_LayoutMain";
+}
+
+<section id="selection-category" style="margin-top:10px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 col-md-2"></div>
+            <div class="col-md-7">
+                <div class="uk-child-width-1-2@s" ы uk-grid>
+                    @foreach (var categoryItem in Model.CategoryViewModels)
+                    {
+                    var img = @categoryItem.NameCategory + ".jpg";
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="https://getuikit.com/docs/images/light.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h1 class="uk-card-title">
+                                    <a class="uk-link-text" asp-action="Service" asp-controller="Home" asp-route-categoryId="@categoryItem.Id">
+                                        @categoryItem.NameCategory
+                                    </a>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            <div id="aboutCategory" class="col-5 bg-info">
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section id="selection-instagram" class=" pb-100 ">
+    <div class="container">
+        <div class="row">
+            <div class="heading text--center">
+                <h2 class="heading--title">Следите за нашим Instagram</h2>
+                <p class="heading--desc">Duis aute irure dolor in reprehenderit volupte velit esse cillum dolore eu fugiat pariatursint occaecat cupidatat non proident culpa.</p>
+
+                <div uk-slider="center: true">
+                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+                        <ul id="slider" class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-4@m"></ul>
+
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                    </div>
+                    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+                </div>
+
+                <div class="divider--line"></div>
+            </div>
+        </div>
+    </div>
+</section>

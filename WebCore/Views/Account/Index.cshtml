@@ -1,0 +1,54 @@
+﻿@model WebCore.Areas.Identity.Models.PersonalViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>PersonalViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>@Model.User.UserName</dd>
+        <dd>@Model.User.Email</dd>
+        <dd>@Model.User.PhoneNumber</dd>
+        <dd>
+            @if (!@Model.User.EmailConfirmed)
+            {
+                <p>Ваш email не подтвержден</p>
+            }
+        </dd>
+    </dl>
+
+    <ul uk-accordion="multiple: true">
+        <li>
+            @foreach (var main in Model.OrderUserViewModel)
+            {
+                foreach (var item in main.Orders)
+                {
+                    <a class="uk-accordion-title" href="#">
+                        Заказ под №@item.OrderId
+                        @if (item.Status)
+                        {
+                            <div class="warning-color">Ваш заказ не подтвержден!</div>
+                        }
+                    </a>
+                    <div class="uk-accordion-content">
+                    @foreach  (var products in main.Products)
+                    {
+                        <div>@products.ProductName Цена: @products.Price</div>
+                    }
+                        <div class="text-info">Сумма заказа: @item.Price</div>
+                    </div>
+                }
+
+            }
+        </li>
+    </ul>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

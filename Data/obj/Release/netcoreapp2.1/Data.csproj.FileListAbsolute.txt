@@ -1,0 +1,11 @@
+D:\Web\WebCore\Data\bin\Release\netcoreapp2.1\Data.deps.json
+D:\Web\WebCore\Data\bin\Release\netcoreapp2.1\Data.runtimeconfig.json
+D:\Web\WebCore\Data\bin\Release\netcoreapp2.1\Data.runtimeconfig.dev.json
+D:\Web\WebCore\Data\bin\Release\netcoreapp2.1\Data.dll
+D:\Web\WebCore\Data\bin\Release\netcoreapp2.1\Data.pdb
+D:\Web\WebCore\Data\obj\Release\netcoreapp2.1\Data.csprojAssemblyReference.cache
+D:\Web\WebCore\Data\obj\Release\netcoreapp2.1\Data.csproj.CoreCompileInputs.cache
+D:\Web\WebCore\Data\obj\Release\netcoreapp2.1\Data.AssemblyInfoInputs.cache
+D:\Web\WebCore\Data\obj\Release\netcoreapp2.1\Data.AssemblyInfo.cs
+D:\Web\WebCore\Data\obj\Release\netcoreapp2.1\Data.dll
+D:\Web\WebCore\Data\obj\Release\netcoreapp2.1\Data.pdb
