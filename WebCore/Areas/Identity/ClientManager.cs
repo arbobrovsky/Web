@@ -68,26 +68,37 @@ namespace WebCore.Areas.Identity
             User user = await _userManager.FindByIdAsync(userId);
             result.User = user;
             result.OrderUserViewModel = await GetOrderUserViewModels(user.PhoneNumber);
-
-
             return result;
+        }
+
+        public void DeleteOrder(int orderId)
+        {
+            var order = _context.Orders.Find(orderId);
+            if (order != null)
+            {
+                _context.Entry(order).State = EntityState.Deleted;
+                _context.SaveChanges();
+            }
         }
 
         private async Task<List<OrderUserViewModel>> GetOrderUserViewModels(string userPhone)
         {
+            var orderList = await _context.Orders.Include(x => x.OrderProducts).AsNoTracking().Where(x => x.CustomerPhone == userPhone).ToListAsync();
+
             var result = new List<OrderUserViewModel>();
             var orders = new List<Order>();
             var ordersProducts = new List<Product>();
-            foreach (var itemOrder in _context.Orders.Where(x => x.CustomerPhone == userPhone))
+            foreach (var item in orderList)
             {
-                orders.Add(itemOrder);
-                foreach (var itemProducts in _context.Order_Products.Where(x => x.OrderId == itemOrder.OrderId))
+                orders = new List<Order>();
+                ordersProducts = new List<Product>();
+                orders.Add(item);
+                foreach (var product in item.OrderProducts)
                 {
-                    ordersProducts.Add(await _context.Products.FindAsync(itemProducts.ProductsId));
+                    ordersProducts.Add(await _context.Products.FindAsync(product.ProductsId));
                 }
                 result.Add(new OrderUserViewModel { Orders = orders, Products = ordersProducts });
             }
-
             return result;
         }
 

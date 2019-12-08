@@ -13,21 +13,21 @@
                 <div class="uk-child-width-1-2@s" ы uk-grid>
                     @foreach (var categoryItem in Model.CategoryViewModels)
                     {
-                    var img = @categoryItem.NameCategory + ".jpg";
-                    <div>
-                        <div class="uk-card uk-card-default">
-                            <div class="uk-card-media-top">
-                                <img src="https://getuikit.com/docs/images/light.jpg" alt="">
-                            </div>
-                            <div class="uk-card-body">
-                                <h1 class="uk-card-title">
-                                    <a class="uk-link-text" asp-action="Service" asp-controller="Home" asp-route-categoryId="@categoryItem.Id">
-                                        @categoryItem.NameCategory
-                                    </a>
-                                </h1>
+                        var img = @categoryItem.NameCategory + ".jpg";
+                        <div>
+                            <div class="uk-card uk-card-default">
+                                <div class="uk-card-media-top">
+                                    <img src="https://getuikit.com/docs/images/light.jpg" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <h1 class="uk-card-title">
+                                        <a class="uk-link-text" style="font-size:24px" asp-action="Service" asp-controller="Home" asp-route-categoryId="@categoryItem.Id">
+                                            @categoryItem.NameCategory
+                                        </a>
+                                    </h1>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     }
                 </div>
             </div>

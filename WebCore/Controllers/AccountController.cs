@@ -16,7 +16,7 @@ using WebCore.Areas.Identity.Models;
 namespace WebCore.Controllers
 {
 
-   
+
     public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -41,8 +41,8 @@ namespace WebCore.Controllers
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.GetUserAsync(HttpContext.User);
- 
-            return View(await _userServices.PersonalViewModel(user.Id));
+            var model = await _userServices.PersonalViewModel(user.Id);
+            return View(model);
         }
 
         [HttpGet]
@@ -56,10 +56,10 @@ namespace WebCore.Controllers
         {
             if (ModelState.IsValid)
             {
-                List<string> role = new List<string>() {"user"};
+                List<string> role = new List<string>() { "user" };
                 User user = new User { Email = model.Email, UserName = model.UserName };
                 var result = await _userManager.CreateAsync(user, model.Password);
-                await _userManager.AddToRolesAsync(user,role);
+                await _userManager.AddToRolesAsync(user, role);
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
@@ -118,6 +118,24 @@ namespace WebCore.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public async Task<IActionResult> CancelTheOrder(int orderId)
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var model = await _userServices.PersonalViewModel(user.Id);
+            var test = model.OrderUserViewModel as List<OrderUserViewModel>;
+            foreach (var item in test[0].Orders)
+            {
+                if (orderId == item.OrderId)
+                {
+                    _userServices.DeleteOrder(orderId);
 
+                }
+            }
+            return RedirectToAction("Index", model);
+
+        }
     }
 }

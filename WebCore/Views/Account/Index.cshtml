@@ -1,54 +1,79 @@
 ﻿@model WebCore.Areas.Identity.Models.PersonalViewModel
-
+@using WebCore.Areas.Identity.Models
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2 class="text--center">Главное меню</h2>
 
 <div>
-    <h4>PersonalViewModel</h4>
+    <h4>Личный кабинет</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dd>@Model.User.UserName</dd>
-        <dd>@Model.User.Email</dd>
-        <dd>@Model.User.PhoneNumber</dd>
-        <dd>
-            @if (!@Model.User.EmailConfirmed)
-            {
-                <p>Ваш email не подтвержден</p>
-            }
-        </dd>
-    </dl>
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+        <dl class="dl-horizontal">
+            <dd>Пользователь: @Model.User.UserName</dd>
+            <dd>Электронная почта: @Model.User.Email</dd>
+            <dd>Номер телефона: @Model.User.PhoneNumber</dd>
+            <dd>
+                @if (!@Model.User.EmailConfirmed)
+                {
+                    <div>Ваш email не подтвержден</div> <a href="#">Подтвердить</a>
+                }
+            </dd>
+            <dd>
+                @if (!@Model.User.PhoneNumberConfirmed)
+                {
+                <div>Ваш телефон не подтвержден</div><a href="#">Подтвердить</a>
+                }
+            </dd>
+        </dl>
 
-    <ul uk-accordion="multiple: true">
-        <li>
+        <ul uk-accordion="multiple: true">
+
             @foreach (var main in Model.OrderUserViewModel)
             {
-                foreach (var item in main.Orders)
+                @if (main != null)
                 {
-                    <a class="uk-accordion-title" href="#">
-                        Заказ под №@item.OrderId
-                        @if (item.Status)
-                        {
-                            <div class="warning-color">Ваш заказ не подтвержден!</div>
-                        }
-                    </a>
-                    <div class="uk-accordion-content">
-                    @foreach  (var products in main.Products)
+                    @foreach (var item in main.Orders)
                     {
-                        <div>@products.ProductName Цена: @products.Price</div>
+                        <li>
+                            <a class="uk-accordion-title" href="#">
+                                Заказ под №@item.OrderId
+                                на  @item.Date
+                            </a>
+                            <div class="uk-accordion-content">
+                                <form asp-action="CancelTheOrder" method="post">
+                                    <input type="hidden" name="orderId" asp-for="@item.OrderId" />
+                                    <table class="table">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">№</th>
+                                                <th scope="col">Наименование</th>
+                                                <th scope="col">Цена</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var products in main.Products)
+                                            {
+                                                <tr>
+                                                    <th scope="row">@products.Id</th>
+                                                    <td>@products.ProductName</td>
+                                                    <td>@products.Price</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div class="text-info">Сумма заказа: @item.Price</div>
+                                    <input type="submit" value="Отменить запись" class="btn-danger" />
+                                </form>
+                            </div>
+                        </li>
                     }
-                        <div class="text-info">Сумма заказа: @item.Price</div>
-                    </div>
-                }
 
+                }
             }
-        </li>
-    </ul>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+        </ul>
+    </div>
+    </div>
+
