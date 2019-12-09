@@ -8,4 +8,9 @@
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\WebSite</_PublishTargetUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>07/30/2019 13:53:01</publishTime>
+    </File>
+  </ItemGroup>
 </Project>

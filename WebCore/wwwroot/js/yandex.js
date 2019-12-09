@@ -11,25 +11,25 @@
         //    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
         //),
 
-        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-            hintContent: 'Собственный значок метки',
-            balloonContent: 'Это красивая метка'
-        }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-             //   iconLayout: 'default#image',
-                // Своё изображение иконки метки.
-               // iconImageHref: 'images/myIcon.gif',
-                // Размеры метки.
-                iconImageSize: [30, 42],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-5, -38]
-            }),
+        //myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+        //    hintContent: 'Собственный значок метки',
+        //    balloonContent: 'Это красивая метка'
+        //}, {
+        //        // Опции.
+        //        // Необходимо указать данный тип макета.
+        //     //   iconLayout: 'default#image',
+        //        // Своё изображение иконки метки.
+        //       // iconImageHref: 'images/myIcon.gif',
+        //        // Размеры метки.
+        //        iconImageSize: [30, 42],
+        //        // Смещение левого верхнего угла иконки относительно
+        //        // её "ножки" (точки привязки).
+        //        iconImageOffset: [-5, -38]
+        //    }),
 
         myPlacemarkWithContent = new ymaps.Placemark([55.569206, 37.489230], {
             hintContent: 'Собственный значок метки с контентом',
-            balloonContent: 'А эта — новогодняя',
+            balloonContent: 'Салон красоты Lotus',
             iconContent: '12'
         }, {
                 // Опции.
@@ -49,6 +49,5 @@
             });
 
     myMap.geoObjects
-        .add(myPlacemark)
         .add(myPlacemarkWithContent);
 });

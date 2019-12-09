@@ -34,6 +34,7 @@ namespace WebCore
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            
             UserConfiguration.IdentityOptionsConfigure(services);
             LogicManagementDb.ServiceDescriptors(services, Configuration);
 
@@ -65,6 +66,7 @@ namespace WebCore
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+           
         }
     }
 }
