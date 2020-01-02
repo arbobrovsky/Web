@@ -11,7 +11,7 @@ request.onload = function (container) {
             var caption;
             for (var i = 0; i < data.data.length; i++) {
                 for (var j = 0; j < data.data[i].tags.length; j++) {
-                    if (data.data[i].tags[j] === 'наращиваниересниц') {
+                    if (data.data[i].tags[j] === 'брови') {
                         var imgURL = data.data[i].images.standard_resolution.url;
                         var li = document.createElement('li');
                         var divUkCard = document.createElement('div');
@@ -24,6 +24,7 @@ request.onload = function (container) {
                         divUkCardTop.appendChild(img);
                         divUkCard.appendChild(divUkCardTop);
                         li.appendChild(divUkCard);
+                        
                         if (li !== null) {
                             container.appendChild(li);
                         }

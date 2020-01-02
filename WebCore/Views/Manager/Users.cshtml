@@ -17,37 +17,29 @@
                 @Html.DisplayNameFor(model => model.UserId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserName)
+               <div>Имя пользователя</div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                <div>Email пользователя</div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
+                <div>Номер телефона пользователя</div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+                <div>Двухфакторная авторизация пользователя</div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+                <div>подтверждение номера телефонна пользователя</div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ConcurrencyStamp)
+                <div>подтверждение электронной почты пользователя</div>
+            </th>
+         
+            <th>
+                <div>Блокировка пользователя</div>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SecurityStamp)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmailConfirmed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LockoutEnd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LockoutEnabled)
-            </th>
-            <th>
-               Права доступа
+                <div> Права доступа</div>
             </th>
             <th></th>
         </tr>
@@ -73,17 +65,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConcurrencyStamp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SecurityStamp)
-            </td>
+          
             <td>
                 @Html.DisplayFor(modelItem => item.EmailConfirmed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LockoutEnd)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.LockoutEnabled)

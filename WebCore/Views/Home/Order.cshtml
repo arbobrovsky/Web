@@ -46,43 +46,43 @@
                 </span>
             </div>
         </section>
-
-        <div class="order-content">
-            <div id="orderServices" style="display:block;" class="step-1">
-                <div class="uk-margin uk-card uk-card-default uk-card-body">
-                    <h2 class="text-center">Выберите услугу</h2>
-                    <div class="accordion">
-                        @foreach (var ICategoryes in Model.Categories)
-                        {
-                            <div class="accordion-item">
-                                <a>@ICategoryes.NameCategory</a>
-                                <div class="content">
-                                    <div class="content-price">
-                                        @foreach (var IProduct in ICategoryes.Products)
-                                        {
-                                            <div class="card-body">
-                                                <div class="uk-grid-small" uk-grid>
-                                                    <div class="uk-width-expand" uk-leader>
-                                                        <input class="checked" type="checkbox" value="@IProduct.Id" name="SelectProductsId" id="box-@IProduct.Id" />
-                                                        <label for="box-@IProduct.Id">@IProduct.Name</label>
+        <div class="container">
+            <div class="order-content">
+                <div id="orderServices" style="display:block;" class="step-1">
+                    <div class="uk-margin uk-card uk-card-default uk-card-body">
+                        <h2 class="text-center">Выберите услугу</h2>
+                        <div class="accordion">
+                            @foreach (var ICategoryes in Model.Categories)
+                            {
+                                <div class="accordion-item">
+                                    <a>@ICategoryes.NameCategory</a>
+                                    <div class="content">
+                                        <div class="content-price">
+                                            @foreach (var IProduct in ICategoryes.Products)
+                                            {
+                                                <div class="card-body">
+                                                    <div class="uk-grid-small" uk-grid>
+                                                        <div class="uk-width-expand" uk-leader>
+                                                            <input class="checked" type="checkbox" value="@IProduct.Id" name="SelectProductsId" id="box-@IProduct.Id" />
+                                                            <label for="box-@IProduct.Id">@IProduct.Name</label>
+                                                        </div>
+                                                        <div class="price-leader">@IProduct.Price &#8381</div>
                                                     </div>
-                                                    <div class="price-leader">@IProduct.Price &#8381</div>
                                                 </div>
-                                            </div>
-                                        }
+                                            }
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
+                            }
+                        </div>
                     </div>
-                </div>
             </div>
             <div id="orderTime" style="display:none;">
                 <div class="uk-margin uk-card uk-card-default uk-card-body">
                     <h2 class="text-center">Выберите свободную дату </h2>
                     <div class="form-group">
                         <span class="field-validation-valid" data-valmsg-for="Date" data-valmsg-replace="true"></span>
-                        <input id="flatpickr1" class="form-control" name="Date" type="text" placeholder="Select Date.." readonly="readonly">
+                        <input id="flatpickr1" class="form-control" name="Date" type="text" placeholder="Выбор даты" readonly="readonly">
                         <input type="hidden" id="OrderTime" name="Time" value="" />
 
                     </div>
@@ -130,8 +130,8 @@
                     <div class="form-group">
                         <span class="field-validation-valid" data-valmsg-for="CustomerComment" data-valmsg-replace="true"></span>
                         <label for="inputComment">Комментарий</label>
-                        <textarea type="text"  asp-for="@Model.CustomerComment" maxlength="150" onkeyup="comment_lenght()" class="form-control" name="CustomerComment" id="inputComment" placeholder="Комментарий"></textarea>
-                        <small id="commentHelp"  class="form-text text-muted">Вы ввели символов 0 из 150</small>
+                        <textarea type="text" asp-for="@Model.CustomerComment" maxlength="150" onkeyup="comment_lenght()" class="form-control" name="CustomerComment" id="inputComment" placeholder="Комментарий"></textarea>
+                        <small id="commentHelp" class="form-text text-muted">Вы ввели символов 0 из 150</small>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
@@ -151,8 +151,10 @@
                 <button id="btnBack" type="button" style="display:none;" class="btn btn-dark" onclick="">Назад</button>
                 <button id="btnNext" type="button" class="btn btn-success disabled">Далее</button>
             </div>
-            <button id="btnComplite" style="display:block;" type="submit" class="btn btn-success">Оформить заказ</button>
+            <button id="btnComplite" style="display:none;" type="submit" class="btn btn-success">Оформить заказ</button>
         </div>
+        </div>
+               
 
     </form>
 
