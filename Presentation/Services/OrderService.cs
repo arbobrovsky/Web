@@ -58,10 +58,24 @@ namespace Presentation.Services
             };
         }
 
-        public async Task<List<Order>> Orders()
+        public async Task<List<OrderList>> Orders()
         {
-            var result = await _dataManager.Order.GetAllOrders(true);
-            return result.ToList();
+            var products = new List<Product>();
+
+            var result = new List<OrderList>();
+            var orders = await _dataManager.Order.GetAllOrders(true);
+            foreach (var item in orders)
+            {
+                products = new List<Product>();
+                foreach (var pitem in item.OrderProducts)
+                {
+                    products.Add(await _dataManager.Products.GetProductById(pitem.ProductsId));
+                }
+
+                result.Add(new OrderList { Order = item, Products = products });
+            }
+
+            return result;
         }
 
         private async Task<IEnumerable<CategoryViewModel>> GetCategoryWithProducts()

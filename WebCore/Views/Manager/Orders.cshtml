@@ -1,95 +1,109 @@
-﻿@model IEnumerable<Data.Entityes.Order>
+﻿@model IEnumerable<Presentation.Models.OrderList>
 
 @{
     ViewData["Title"] = "Orders";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Заказы</h2>
+<h2>Orders</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-               <div>Id</div>
+            <th scope="col">
+                id
+            </th>
+            <th scope="col">
+                Имя
+            </th>
+            <th scope="col">
+                Email
+            </th>
+            <th scope="col">
+                Телефон
+            </th>
+            <th scope="col">
+                Комментарий
+            </th>
+            <th scope="col">
+                Цена
             </th>
             <th>
-                <div>Имя пользователя</div>
+                Дата посещения
             </th>
             <th>
-                <div>Телефон пользователя</div>
+                Времени затрачено(минут)
             </th>
             <th>
-                <div>Email пользователя</div>
+                Статус заказа
             </th>
             <th>
-                <div>Комментарий пользователя</div>
+                Время регистрации заказа
             </th>
-            <th>
-                <div>Дата бронирования</div>
-            </th>
-            <th>
-                <div>Сумма заказа</div>
-            </th>
-            <th>
-                <div>Время затрачена на выполнения (минут)</div>
-            </th>
-            <th>
-                <div>Статус заказа</div>
-            </th>
-            <th>
-                <div>Время бранирования</div>
-            </th>
-            <th>
-              <div>Список услуг у пользователя</div>
+            <th >
+                Заказанные усулуги
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerPhone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerComment)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeWasted)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegistrationTime)
-            </td>
-            <td>
-               @foreach (var produts in item.OrderProducts)
-               {
-                <div>@produts.OrderId</div>
-               }
-            </td>
-            <td>
-                @Html.ActionLink("Изменить", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Удалить", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Order.OrderId
+                </td>
+                <td>
+                    @item.Order.CustomerName
+                </td>
+
+                <td>
+                    @item.Order.CustomerEmail
+                </td>
+                <td>
+                    @item.Order.CustomerPhone
+                </td>
+                <td>
+                    @item.Order.CustomerComment
+                </td>
+                <td>
+                    @item.Order.Price
+                </td>
+                <td>
+                    @item.Order.Date
+                </td>
+                <td>
+                    @item.Order.TimeWasted
+                </td>
+                <td>
+                    @item.Order.Status
+                </td>
+                <td>
+                    @item.Order.RegistrationTime
+                </td>
+                <td>
+                    <table class="table-active">
+                        <thead>
+                            <tr>
+                                <th>Наименование</th>
+                                <th>Цена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var products in item.Products)
+                            {
+                                <tr>
+                                    <td>@products.ProductName</td>
+                                    <td>@products.Price</td>
+
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
