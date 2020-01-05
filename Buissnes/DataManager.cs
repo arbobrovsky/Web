@@ -13,7 +13,12 @@ namespace BusinessLogic
         private readonly IOrderRepository _orderRepository;
   
 
-        public DataManager(IProductsRepository productsRepository, ICategoriesRepository categoriesRepository, IContactRepository contactRepository, IOrderRepository orderRepository)
+        public DataManager(
+            IProductsRepository productsRepository,
+            ICategoriesRepository categoriesRepository,
+            IContactRepository contactRepository, 
+            IOrderRepository orderRepository
+            )
         {
             _productsRepository = productsRepository;
             _categoriesRepository = categoriesRepository;

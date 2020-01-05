@@ -54,3 +54,17 @@ D:\GIT\WebCore\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.AssemblyInf
 D:\GIT\WebCore\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.csproj.CopyComplete
 D:\GIT\WebCore\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.dll
 D:\GIT\WebCore\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.pdb
+E:\GIT\Web\Presentation\bin\Debug\netcoreapp2.1\Presentation.deps.json
+E:\GIT\Web\Presentation\bin\Debug\netcoreapp2.1\Presentation.dll
+E:\GIT\Web\Presentation\bin\Debug\netcoreapp2.1\Presentation.pdb
+E:\GIT\Web\Presentation\bin\Debug\netcoreapp2.1\BusinessLogic.dll
+E:\GIT\Web\Presentation\bin\Debug\netcoreapp2.1\Data.dll
+E:\GIT\Web\Presentation\bin\Debug\netcoreapp2.1\BusinessLogic.pdb
+E:\GIT\Web\Presentation\bin\Debug\netcoreapp2.1\Data.pdb
+E:\GIT\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.csprojAssemblyReference.cache
+E:\GIT\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.csproj.CoreCompileInputs.cache
+E:\GIT\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.AssemblyInfoInputs.cache
+E:\GIT\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.AssemblyInfo.cs
+E:\GIT\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.csproj.CopyComplete
+E:\GIT\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.dll
+E:\GIT\Web\Presentation\obj\Debug\netcoreapp2.1\Presentation.pdb

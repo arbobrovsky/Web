@@ -46,3 +46,15 @@ D:\GIT\WebCore\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.AssemblyInfo.c
 D:\GIT\WebCore\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.csproj.CopyComplete
 D:\GIT\WebCore\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.dll
 D:\GIT\WebCore\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.pdb
+E:\GIT\Web\Buissnes\bin\Debug\netcoreapp2.1\BusinessLogic.deps.json
+E:\GIT\Web\Buissnes\bin\Debug\netcoreapp2.1\BusinessLogic.dll
+E:\GIT\Web\Buissnes\bin\Debug\netcoreapp2.1\BusinessLogic.pdb
+E:\GIT\Web\Buissnes\bin\Debug\netcoreapp2.1\Data.dll
+E:\GIT\Web\Buissnes\bin\Debug\netcoreapp2.1\Data.pdb
+E:\GIT\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.csprojAssemblyReference.cache
+E:\GIT\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.csproj.CoreCompileInputs.cache
+E:\GIT\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.AssemblyInfoInputs.cache
+E:\GIT\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.AssemblyInfo.cs
+E:\GIT\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.csproj.CopyComplete
+E:\GIT\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.dll
+E:\GIT\Web\Buissnes\obj\Debug\netcoreapp2.1\BusinessLogic.pdb

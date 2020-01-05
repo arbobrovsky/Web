@@ -4,6 +4,7 @@
 }
 
 <form asp-action="Registration">
+    <h2>Форма для регистрации</h2>
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="Email" class="control-label"></label>
@@ -11,7 +12,7 @@
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="UserName" class="control-label"></label>
+        <label asp-for="UserName" class="control-label">Имя пользователя</label>
         <input asp-for="UserName" class="form-control" />
         <span asp-validation-for="UserName" class="text-danger"></span>
     </div>
@@ -27,7 +28,7 @@
         <span asp-validation-for="Password" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="PasswordConfirm" class="control-label"></label>
+        <label asp-for="PasswordConfirm" class="control-label">Повторный пароль</label>
         <input asp-for="PasswordConfirm" class="form-control" />
         <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
     </div>

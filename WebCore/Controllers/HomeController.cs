@@ -18,17 +18,23 @@ namespace WebCore.Controllers
         private readonly ServicesManager _serviceManager;
         private readonly DataManager _dataManager;
 
-
+        
         public HomeController(DataManager dataManager)
         {
             _dataManager = dataManager;
             _serviceManager = new ServicesManager(_dataManager);
         }
+
         public async Task<IActionResult> Index()
         {
             var model = await _serviceManager.GetAllModel();
 
             return View(model);
+        }
+       
+        public async Task<IActionResult> Testing()
+        {
+            return View(await _dataManager.Products.GetAllProducts(true));
         }
 
         public IActionResult Galleria()

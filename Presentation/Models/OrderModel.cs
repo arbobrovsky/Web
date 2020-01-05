@@ -44,6 +44,12 @@ namespace Presentation.Models
 
 
 
+    public class OrderList
+    {
+        public Order Order { get; set; }
+        public List<Product> Products { get; set; }
+    }
+
     public class OrderWorkTIme
     {
         public DateTime OrderingDate  { get; set; }
@@ -55,5 +61,8 @@ namespace Presentation.Models
         public int TimeWasted{ get; set; }
         public decimal Price { get; set; }
     }
+
+
+
 
 }

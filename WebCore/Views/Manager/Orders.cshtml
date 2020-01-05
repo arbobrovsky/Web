@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Data.Entityes.Order>
+
+@{
+    ViewData["Title"] = "Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Заказы</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               <div>Id</div>
+            </th>
+            <th>
+                <div>Имя пользователя</div>
+            </th>
+            <th>
+                <div>Телефон пользователя</div>
+            </th>
+            <th>
+                <div>Email пользователя</div>
+            </th>
+            <th>
+                <div>Комментарий пользователя</div>
+            </th>
+            <th>
+                <div>Дата бронирования</div>
+            </th>
+            <th>
+                <div>Сумма заказа</div>
+            </th>
+            <th>
+                <div>Время затрачена на выполнения (минут)</div>
+            </th>
+            <th>
+                <div>Статус заказа</div>
+            </th>
+            <th>
+                <div>Время бранирования</div>
+            </th>
+            <th>
+              <div>Список услуг у пользователя</div>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeWasted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationTime)
+            </td>
+            <td>
+               @foreach (var produts in item.OrderProducts)
+               {
+                <div>@produts.OrderId</div>
+               }
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Удалить", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

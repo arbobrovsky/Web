@@ -63,7 +63,7 @@
                                                 <div class="card-body">
                                                     <div class="uk-grid-small" uk-grid>
                                                         <div class="uk-width-expand" uk-leader>
-                                                            <input class="checked" type="checkbox" value="@IProduct.Id" name="SelectProductsId" id="box-@IProduct.Id" />
+                                                            <input class="checked" type="checkbox" value="@IProduct.Name @IProduct.Price " name="SelectProductsId" id="box-@IProduct.Id" />
                                                             <label for="box-@IProduct.Id">@IProduct.Name</label>
                                                         </div>
                                                         <div class="price-leader">@IProduct.Price &#8381</div>
@@ -76,89 +76,129 @@
                             }
                         </div>
                     </div>
-            </div>
-            <div id="orderTime" style="display:none;">
-                <div class="uk-margin uk-card uk-card-default uk-card-body">
-                    <h2 class="text-center">Выберите свободную дату </h2>
-                    <div class="form-group">
-                        <span class="field-validation-valid" data-valmsg-for="Date" data-valmsg-replace="true"></span>
-                        <input id="flatpickr1" class="form-control" name="Date" type="text" placeholder="Выбор даты" readonly="readonly">
-                        <input type="hidden" id="OrderTime" name="Time" value="" />
-
-                    </div>
-                    <hr />
-                    <div class="content">
-                        <p>Утро</p>
-                        @for (int i = 10; i < 22; i++)
-                        {
-                            <input id="btnClock" class="btn btn-outline-success" onclick="getTime(this) " style="margin-bottom:10px;" type="button" value="@i:00" />
-                            <input id="btnClock" class="btn btn-outline-success " onclick="getTime(this)" style="margin-bottom:10px;" type="button" value="@i:30" />
-                            @if (i == 12)
-                            {
-                                <p>День</p>
-                            }
-                            @if (i == 16)
-                            {
-                                <p>Вечер</p>
-                            }
-
-                        }
-                    </div>
                 </div>
-            </div>
-            <div id="orderUserName" style="display:none;" class="step-3">
-                <div class="uk-margin uk-card uk-card-default uk-card-body">
-                    <h2 class="text-center">Контактные данные</h2>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Имя</label>
-                            <span class="field-validation-valid" data-valmsg-for="CustomerName" data-valmsg-replace="true"></span>
-                            <input type="text" class="form-control" asp-for="@Model.CustomerName" name="CustomerName" id="inputName" placeholder="Представьтесь">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <span class="field-validation-valid" data-valmsg-for="CustomerEmail" data-valmsg-replace="true"></span>
-                            <label for="inputPassword4">Email</label>
-                            <input type="email" asp-for="@Model.CustomerEmail" class="form-control" name="CustomerEmail" id="inputEmail" placeholder="Электронная почта">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <span class="field-validation-valid" data-valmsg-for="CustomerPhone" data-valmsg-replace="true"></span>
-                        <label for="inputPhoneNumber">Телефон</label>
-                        <input type="text" class="form-control" asp-for="@Model.CustomerPhone" name="CustomerPhone" id="inputPhoneNumber" placeholder="Введите контактный телефон">
-                    </div>
+                <div id="orderTime" style="display:none;">
+                    <div class="uk-margin uk-card uk-card-default uk-card-body">
+                        <h2 class="text-center">Выберите свободную дату </h2>
+                        <div class="form-group">
+                            <span class="field-validation-valid" data-valmsg-for="Date" data-valmsg-replace="true"></span>
+                            <input id="flatpickr1" class="form-control" name="Date" type="text" placeholder="Выбор даты" readonly="readonly">
+                            <input type="hidden" id="OrderTime" name="Time" value="" />
 
-                    <div class="form-group">
-                        <span class="field-validation-valid" data-valmsg-for="CustomerComment" data-valmsg-replace="true"></span>
-                        <label for="inputComment">Комментарий</label>
-                        <textarea type="text" asp-for="@Model.CustomerComment" maxlength="150" onkeyup="comment_lenght()" class="form-control" name="CustomerComment" id="inputComment" placeholder="Комментарий"></textarea>
-                        <small id="commentHelp" class="form-text text-muted">Вы ввели символов 0 из 150</small>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <span class="field-validation-valid" data-valmsg-for="TermsAccepted" data-valmsg-replace="true"></span>
-                            <label class="form-check-label">
-                                <input class="form-check-input" id="TermsAccepted" name="TermsAccepted" asp-for="@Model.TermsAccepted" type="checkbox"> Нажимная кнопку "Записаться", <a class="text-info stretched-link">вы соглашаетесь с условиями пользовательского соглашения</a>
-                            </label>
+                        </div>
+                        <hr />
+                        <div class="content">
+                            <p>Утро</p>
+                            @for (int i = 10; i < 22; i++)
+                            {
+                                <input id="btnClock" class="btn btn-outline-success" onclick="getTime(this) " style="margin-bottom:10px;" type="button" value="@i:00" />
+                                <input id="btnClock" class="btn btn-outline-success " onclick="getTime(this)" style="margin-bottom:10px;" type="button" value="@i:30" />
+                                @if (i == 12)
+                                {
+                                    <p>День</p>
+                                }
+                                @if (i == 16)
+                                {
+                                    <p>Вечер</p>
+                                }
+
+                            }
                         </div>
                     </div>
                 </div>
-            </div>
+                <div id="orderUserName" style="display:none;" class="step-3">
+                    <div class="uk-margin uk-card uk-card-default uk-card-body">
+                        <h2 class="text-center">Контактные данные</h2>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Имя</label>
+                                <span class="field-validation-valid" data-valmsg-for="CustomerName" data-valmsg-replace="true"></span>
+                                <input type="text" class="form-control" asp-for="@Model.CustomerName" name="CustomerName" id="inputName" placeholder="Представьтесь">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <span class="field-validation-valid" data-valmsg-for="CustomerEmail" data-valmsg-replace="true"></span>
+                                <label for="inputPassword4">Email</label>
+                                <input type="email" asp-for="@Model.CustomerEmail" class="form-control" name="CustomerEmail" id="inputEmail" placeholder="Электронная почта">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="field-validation-valid" data-valmsg-for="CustomerPhone" data-valmsg-replace="true"></span>
+                            <label for="inputPhoneNumber">Телефон</label>
+                            <input type="text" class="form-control" asp-for="@Model.CustomerPhone" name="CustomerPhone" id="inputPhoneNumber" placeholder="Введите контактный телефон">
+                        </div>
 
-            <div id="orderComplite" style="display:none;" class="step-4">
-                <p>W'r did this GRAIT</p>
+                        <div class="form-group">
+                            <span class="field-validation-valid" data-valmsg-for="CustomerComment" data-valmsg-replace="true"></span>
+                            <label for="inputComment">Комментарий</label>
+                            <textarea type="text" asp-for="@Model.CustomerComment" maxlength="150" onkeyup="comment_lenght()" class="form-control" name="CustomerComment" id="inputComment" placeholder="Комментарий"></textarea>
+                            <small id="commentHelp" class="form-text text-muted">Вы ввели символов 0 из 150</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <span class="field-validation-valid" data-valmsg-for="TermsAccepted" data-valmsg-replace="true"></span>
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="TermsAccepted" name="TermsAccepted" asp-for="@Model.TermsAccepted" type="checkbox"> Нажимная кнопку "Записаться", <a class="text-info stretched-link">вы соглашаетесь с условиями пользовательского соглашения</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="orderComplite" style="display:none;" class="step-4">
+                    <p>W'r did this GRAIT</p>
+                </div>
+                <div class="flex-row d-flex">
+                    <button id="btnBack" type="button" style="display:none;" class="btn btn-dark" onclick="">Назад</button>
+                    <button id="btnNext" type="button" class="btn btn-success disabled">Далее</button>
+                    <button id="btnComplite" style="display:block;" class="uk-button uk-button-secondary uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Подтвердить заказ!</button>
+                </div>
+                <!-- This is the modal -->
+                <div id="modal-example" uk-modal>
+                    <div class="uk-modal-dialog uk-modal-body">
+                        <h2 class="uk-modal-title">Подтверждение записи</h2>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Имя</td>
+                                    <td id="UserName">Артём</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td id="UserEmail">arbobrovsky@gmail.com</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Телефон</td>
+                                    <td id="UserPhone">+375336347694</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Дата и время бронирования</td>
+                                    <td id="dataOrder">24.12.2019 12:35</td>
+                                </tr>
+                                <tr>
+                                    <td>Список заказов:</td>
+                                    <td id="orderList"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <p class="flex-row d-flex">
+                            <button class="uk-button uk-button-default uk-modal-close" type="button">Отменить заказ</button>
+                            <button style="display:block;" type="submit" class="btn btn-success">Оформить заказ</button>
+                        </p>
+
+                    </div>
+                </div>
             </div>
-            <div class="flex-row d-flex">
-                <button id="btnBack" type="button" style="display:none;" class="btn btn-dark" onclick="">Назад</button>
-                <button id="btnNext" type="button" class="btn btn-success disabled">Далее</button>
-            </div>
-            <button id="btnComplite" style="display:none;" type="submit" class="btn btn-success">Оформить заказ</button>
         </div>
-        </div>
-               
+
 
     </form>
 
     <script>
+
         var CompliteEnable = false;
         var listDisableHour = [];
         var parseModelDate = '@Html.Raw(Json.Serialize(Model.OrderingTime))';
@@ -176,6 +216,11 @@
                 DisableHour(dateStr);
             },
         });
+        //var _userName = "";
+        //var _userEmail = "";
+        //var _userPhone = "";
+        //var _userOrder = "";
+        //var _userList = "";
 
 
         let orderServices = document.getElementById("orderServices");
@@ -187,11 +232,32 @@
         let commentHelp = document.getElementById("commentHelp");
         let txtComment = document.getElementById("inputComment");
         let dataPicker = document.getElementById("flatpickr1");
+        let btnComplite = document.getElementById("btnComplite");
         let inputTime = document.getElementById("OrderTime");
         var btnTime = document.querySelectorAll("#btnClock");
+
+
+        let userName = document.getElementById("userName");
+        let userEmail = document.getElementById("userEmail");
+        let userPhone = document.getElementById("userPhone");
+        let dataOrder = document.getElementById("dataOrder");
+        let orderList = document.getElementById("orderList");
+
+
+        btnComplite.addEventListener("click", () => {
+            var checkboxes = [];
+            console.log(checkboxes);
+            $('input:checkbox:checked').each(function () {
+                checkboxes.push(this.value);
+                for (var i = 0; i < checkboxes.length; i++) {
+                    var div = document.createElement('div');
+                    div.innerText = checkboxes[i];
+                }
+                orderList.appendChild(div);
+            });
+        });
+
         var steps = [orderServices, orderTime, orderUserName, orderComplite];
-
-
         function comment_lenght() {
             commentHelp.innerText = ('Вы ввели символов ' + txtComment.value.length + ' из 150');
         }
@@ -211,6 +277,11 @@
                     document.getElementById("step-" + i).classList.toggle('success');
                     steps[i].style.display = "block ";
                     btnBack.style.display = "block";
+                    if (i == 2) {
+                        btnComplite.style.display = "block";
+                        btnNext.style.display = "none";
+                    }
+
                 }
 
                 console.log(CompliteEnable);
@@ -219,7 +290,9 @@
                 });
             }
             else {
+
                 alert('Выберите свободную дату и время');
+
             }
             CompliteEnable = false;
         });
@@ -236,6 +309,7 @@
                             btnBack.style.display = "none";
                         }
                     }
+                    btnNext.style.display = "block";
                 }
                 else
                     console.log("Ошибка: значение I меньше 0");

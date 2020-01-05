@@ -245,9 +245,9 @@ namespace WebCore.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> OrderTest()
+        public async Task<IActionResult> Orders()
         {
-            var model = await _serviceManager.OrderService.CreateNewOrderViewModel();
+            var model = await _serviceManager.OrderService.Orders();
 
             return View(model);
         }

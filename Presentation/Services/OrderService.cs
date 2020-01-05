@@ -58,6 +58,12 @@ namespace Presentation.Services
             };
         }
 
+        public async Task<List<Order>> Orders()
+        {
+            var result = await _dataManager.Order.GetAllOrders(true);
+            return result.ToList();
+        }
+
         private async Task<IEnumerable<CategoryViewModel>> GetCategoryWithProducts()
         {
             List<ProductViewOrder> productViews = new List<ProductViewOrder>();
