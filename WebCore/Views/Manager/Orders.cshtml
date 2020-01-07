@@ -10,22 +10,22 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">
+            <th>
                 id
             </th>
-            <th scope="col">
+            <th>
                 Имя
             </th>
-            <th scope="col">
+            <th>
                 Email
             </th>
-            <th scope="col">
+            <th>
                 Телефон
             </th>
-            <th scope="col">
+            <th>
                 Комментарий
             </th>
-            <th scope="col">
+            <th>
                 Цена
             </th>
             <th>
@@ -40,9 +40,14 @@
             <th>
                 Время регистрации заказа
             </th>
-            <th >
+            <th>
                 Заказанные усулуги
             </th>
+
+            <th>
+              Управление заказами
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -77,10 +82,13 @@
                 </td>
                 <td>
                     @item.Order.Status
+                    <input type="checkbox" name="status" value=""
+                           @(item.Order.Status ? "checked=\"checked\"" : "") />
                 </td>
                 <td>
                     @item.Order.RegistrationTime
                 </td>
+
                 <td>
                     <table class="table-active">
                         <thead>
@@ -97,11 +105,14 @@
                                     <td>@products.Price</td>
 
                                 </tr>
-
                             }
                         </tbody>
                     </table>
                 </td>
+                <td>
+                    <a href="#" class="btn-block" >Изменить</a>
+                </td>
+
             </tr>
         }
     </tbody>

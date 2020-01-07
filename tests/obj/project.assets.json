@@ -12086,23 +12086,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Артём\\.nuget\\packages\\": {},
+    "C:\\Users\\arBob\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GIT\\WebCore\\Web\\tests\\tests.csproj",
+      "projectUniqueName": "E:\\GIT\\Web\\tests\\tests.csproj",
       "projectName": "tests",
-      "projectPath": "D:\\GIT\\WebCore\\Web\\tests\\tests.csproj",
-      "packagesPath": "C:\\Users\\Артём\\.nuget\\packages\\",
-      "outputPath": "D:\\GIT\\WebCore\\Web\\tests\\obj\\",
+      "projectPath": "E:\\GIT\\Web\\tests\\tests.csproj",
+      "packagesPath": "C:\\Users\\arBob\\.nuget\\packages\\",
+      "outputPath": "E:\\GIT\\Web\\tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Артём\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\arBob\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12115,8 +12115,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\GIT\\WebCore\\Web\\WebCore\\WebCore.csproj": {
-              "projectPath": "D:\\GIT\\WebCore\\Web\\WebCore\\WebCore.csproj"
+            "E:\\GIT\\Web\\WebCore\\WebCore.csproj": {
+              "projectPath": "E:\\GIT\\Web\\WebCore\\WebCore.csproj"
             }
           }
         }
