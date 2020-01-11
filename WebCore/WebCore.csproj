@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Identity\ApplicationManager\**" />
+    <Content Remove="Areas\Identity\ApplicationManager\**" />
+    <EmbeddedResource Remove="Areas\Identity\ApplicationManager\**" />
+    <None Remove="Areas\Identity\ApplicationManager\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Cake.Issues.EsLint" Version="0.7.0" />
     <PackageReference Include="JSDoc" Version="3.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -16,6 +23,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
+    <PackageReference Include="Twilio" Version="5.37.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\ApplicationManager\" />
+    <Folder Include="Areas\Identity\Interfaces\" />
   </ItemGroup>
 
 </Project>

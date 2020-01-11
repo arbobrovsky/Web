@@ -57,7 +57,7 @@ namespace WebCore.Areas.Identity
             User user = await _userManager.FindByIdAsync(id);
             if (user != null)
             {
-                return new EditUserViewModel { UserName = user.UserName, Email = user.Email, PhoneNumber = user.PhoneNumber };
+                return new EditUserViewModel { UserName = user.UserName, Email = user.Email, PhoneNumber = user.PhoneNumber,CustomerName=user.CustomerName };
             }
             return null;
         }
@@ -70,6 +70,9 @@ namespace WebCore.Areas.Identity
             result.OrderUserViewModel = await GetOrderUserViewModels(user.PhoneNumber);
             return result;
         }
+
+       
+
 
         public void DeleteOrder(int orderId)
         {

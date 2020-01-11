@@ -12,16 +12,10 @@
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="UserName" class="control-label">Имя пользователя</label>
-            <input asp-for="UserName" class="form-control" />
-            <span asp-validation-for="UserName" class="text-danger"></span>
+            <label asp-for="CustomerName" class="control-label"></label>
+            <input asp-for="CustomerName" class="form-control" />
+            <span asp-validation-for="CustomerName" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <span class="field-validation-valid" data-valmsg-for="PhoneNumber" data-valmsg-replace="true"></span>
-            <label for="inputPhoneNumber">Телефон</label>
-            <input type="text" class="form-control" asp-for="@Model.PhoneNumber" name="CustomerPhone" id="inputPhoneNumber" placeholder="Введите контактный телефон">
-        </div>
-
         <div class="form-group">
             <label asp-for="Password" class="control-label"></label>
             <input asp-for="Password" class="form-control" />

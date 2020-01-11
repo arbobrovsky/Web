@@ -14,7 +14,8 @@ namespace WebCore.Areas.Identity.Models
         public string Email { get; set; }
 
         [Required]
-        public string UserName { get; set; }
+        public string CustomerName { get; set; }
+       
 
         [Required]
         public string PhoneNumber { get; set; }
@@ -72,6 +73,7 @@ namespace WebCore.Areas.Identity.Models
     {
         public string IdUser { get; set; }
         public string UserName { get; set; }
+        public string CustomerName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
@@ -95,10 +97,6 @@ namespace WebCore.Areas.Identity.Models
 
     }
 
-
-
-
-
-
+   
 
 }

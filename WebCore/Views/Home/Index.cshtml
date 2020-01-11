@@ -49,37 +49,38 @@
 
 <section id="selection-category" style="margin-top:10px; margin-bottom:30px;">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-6 col-md-2"></div>
-            <div class="col-md-7">
-                <div class="text--center" style="margin-bottom:30px">
-                    <h2 class="heading--title">Наши услуги</h2>
-                </div>
-                <div class="uk-child-width-1-2@s" ы uk-grid>
-                    @foreach (var categoryItem in Model.CategoryViewModels)
-                    {
-                        var img = @categoryItem.NameCategory + ".jpg";
-                        <div>
-                            <div class="uk-card uk-card-default">
-                                <div class="uk-card-media-top">
-                                    <img src="~/images/@img" />
-                                    @*<img src="https://getuikit.com/docs/images/light.jpg" alt="">*@
-                                </div>
-                                <div class="uk-card-body">
-                                    <div class="text--center">
-                                        <h1 class="uk-card-title">
-                                            <a class="uk-link-text" style="font-size:24px" asp-action="Service" asp-controller="Home" asp-route-categoryId="@categoryItem.Id">
-                                                @categoryItem.NameCategory
-                                            </a>
-                                        </h1>
+        <div class="top-cover center-block">
+                <div class="uk-flex-center" uk-grid>
+                @*<div class="col-md-7 bg-danger">*@
+                    <div class="text--center" style="margin-bottom:30px">
+                        <h2 class="heading--title">Наши услуги</h2>
+                    </div>
+                    <div class="uk-child-width-1-4@s" ы uk-grid>
+                        @foreach (var categoryItem in Model.CategoryViewModels)
+                        {
+                            var img = @categoryItem.NameCategory + ".jpg";
+                            <div>
+                                <div class="uk-card uk-card-default">
+                                    <div class="uk-card-media-top">
+                                        <img src="~/images/@img"  class="img-responsive"/>
+                                        @*<img src="https://getuikit.com/docs/images/light.jpg" alt="">*@
+                                    </div>
+                                    <div class="uk-card-body">
+                                        <div class="text--center">
+                                            <h1 class="uk-card-title">
+                                                <a class="uk-link-text" style="font-size:24px" asp-action="Service" asp-controller="Home" asp-route-categoryId="@categoryItem.Id">
+                                                    @categoryItem.NameCategory
+                                                </a>
+                                            </h1>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    }
+                        }
+                </div>
                 </div>
             </div>
-            <div class="col-6 col-md-2"></div>
+
         </div>
 
     </div>

@@ -12,6 +12,7 @@ using Presentation.Models;
 using Presentation.Services;
 using WebCore.Areas.Identity;
 using WebCore.Areas.Identity.Models;
+using WebCore.Areas.Identity.Services;
 
 namespace WebCore.Controllers
 {
@@ -24,15 +25,16 @@ namespace WebCore.Controllers
         private readonly ClientManager _userServices;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly EFDBContext _context;
+        private readonly TwilioVerifyClient _client;
 
-        public AccountController(EFDBContext context, UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(TwilioVerifyClient client, EFDBContext context, UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _context = context;
             _userServices = new ClientManager(_context, _roleManager, userManager);
-
+            _client = client;
 
         }
 
@@ -57,7 +59,9 @@ namespace WebCore.Controllers
             if (ModelState.IsValid)
             {
                 List<string> role = new List<string>() { "user" };
-                User user = new User { Email = model.Email, UserName = model.UserName };
+                User user = new User { Email = model.Email, UserName = model.Email, CustomerName = model.CustomerName };
+                
+                
                 var result = await _userManager.CreateAsync(user, model.Password);
                 await _userManager.AddToRolesAsync(user, role);
                 if (result.Succeeded)
@@ -81,6 +85,11 @@ namespace WebCore.Controllers
         {
             return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
+        [HttpGet]
+        public ActionResult AddPhoneNumber()
+        {
+            return View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -88,6 +97,7 @@ namespace WebCore.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var result =
                     await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
@@ -137,5 +147,45 @@ namespace WebCore.Controllers
             return RedirectToAction("Index", model);
 
         }
+
+        public IActionResult VerifyPhone()
+        {
+            return View();
+        }
+
+        public IActionResult ConfirmPhone(InputModel Input)
+        {
+            return View(Input);
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> OnPostAsync(InputModel Input)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("VerifyPhone");
+            }
+            //try
+            //{
+                var result = await _client.StartVerification(Input.DialingCode, Input.PhoneNumber);
+                if (result.Success)
+                {
+                    
+                    return RedirectToAction("ConfirmPhone", Input);
+                }
+
+                ModelState.AddModelError("", $"There was an error sending the verification code: {result.Message}");
+            //}
+            //catch (Exception)
+            //{
+            //    ModelState.AddModelError("",
+            //        "There was an error sending the verification code, please check the phone number is correct and try again");
+            //}
+
+            return View("VerifyPhone");
+        }
+
     }
 }

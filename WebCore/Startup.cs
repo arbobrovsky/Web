@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WebCore.Areas.Identity.RepositoryUsers;
+using WebCore.Areas.Identity.Services;
 using WebCore.Repository;
 
 namespace WebCore
@@ -32,13 +33,23 @@ namespace WebCore
             {
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
+
             });
 
             
             UserConfiguration.IdentityOptionsConfigure(services);
             LogicManagementDb.ServiceDescriptors(services, Configuration);
 
-           services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            var apiKey = Configuration["Twilio:VerifyApiKey"];
+
+            services.AddHttpClient<TwilioVerifyClient>(client =>
+            {
+                client.BaseAddress = new Uri("https://api.authy.com/");
+                client.DefaultRequestHeaders.Add("X-Authy-API-Key", apiKey);
+            });
+
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
