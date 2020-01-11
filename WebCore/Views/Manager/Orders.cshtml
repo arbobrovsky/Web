@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Orders</h2>
+<h2>Заказы</h2>
 
 <table class="table">
     <thead>
@@ -110,7 +110,11 @@
                     </table>
                 </td>
                 <td>
-                    <a href="#" class="btn-block" >Изменить</a>
+                    <div class="row">
+                        <input type="button" value="Изменить" class="uk-button uk-button-primary" />
+                        <input type="button" value="Удалить" class="uk-button uk-button-danger" />
+                        <input type="button" value="Занести в черный список" class="uk-button uk-button-secondary" />
+                    </div>
                 </td>
 
             </tr>
