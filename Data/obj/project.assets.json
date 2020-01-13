@@ -4517,23 +4517,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Артём\\.nuget\\packages\\": {},
+    "C:\\Users\\arBob\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GIT\\WebCore\\Web\\Data\\Data.csproj",
+      "projectUniqueName": "E:\\GIT\\Web\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "D:\\GIT\\WebCore\\Web\\Data\\Data.csproj",
-      "packagesPath": "C:\\Users\\Артём\\.nuget\\packages\\",
-      "outputPath": "D:\\GIT\\WebCore\\Web\\Data\\obj\\",
+      "projectPath": "E:\\GIT\\Web\\Data\\Data.csproj",
+      "packagesPath": "C:\\Users\\arBob\\.nuget\\packages\\",
+      "outputPath": "E:\\GIT\\Web\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Артём\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\arBob\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

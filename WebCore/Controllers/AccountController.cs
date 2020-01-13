@@ -60,8 +60,8 @@ namespace WebCore.Controllers
             {
                 List<string> role = new List<string>() { "user" };
                 User user = new User { Email = model.Email, UserName = model.Email, CustomerName = model.CustomerName };
-                
-                
+
+
                 var result = await _userManager.CreateAsync(user, model.Password);
                 await _userManager.AddToRolesAsync(user, role);
                 if (result.Succeeded)
@@ -153,10 +153,7 @@ namespace WebCore.Controllers
             return View();
         }
 
-        public IActionResult ConfirmPhone(InputModel Input)
-        {
-            return View(Input);
-        }
+
 
 
 
@@ -169,14 +166,14 @@ namespace WebCore.Controllers
             }
             //try
             //{
-                var result = await _client.StartVerification(Input.DialingCode, Input.PhoneNumber);
-                if (result.Success)
-                {
-                    
-                    return RedirectToAction("ConfirmPhone", Input);
-                }
+            var result = await _client.StartVerification(Input.DialingCode, Input.PhoneNumber);
+            if (result.Success)
+            {
 
-                ModelState.AddModelError("", $"There was an error sending the verification code: {result.Message}");
+                return RedirectToAction("ConfirmPhone", new { Input.DialingCode, Input.PhoneNumber });
+            }
+
+            ModelState.AddModelError("", $"There was an error sending the verification code: {result.Message}");
             //}
             //catch (Exception)
             //{
@@ -185,6 +182,55 @@ namespace WebCore.Controllers
             //}
 
             return View("VerifyPhone");
+        }
+
+
+
+        public IActionResult ConfirmPhone(int DialingCode, string PhoneNumber)
+        {
+            var result = new InputModel { DialingCode = DialingCode, PhoneNumber = PhoneNumber };
+
+            return View(result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ConfirmPhone(InputModel Input)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            try
+            {
+                var result = await _client.CheckVerificationCode(Input.DialingCode, Input.PhoneNumber, Input.VerificationCode);
+                if (result.Success)
+                {
+                    var identityUser = await _userManager.GetUserAsync(User);
+                    identityUser.PhoneNumberConfirmed = true;
+                    var updateResult = await _userManager.UpdateAsync(identityUser);
+
+                    if (updateResult.Succeeded)
+                    {
+                        return RedirectToPage("ConfirmPhoneSuccess");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "There was an error confirming the verification code, please try again");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", $"There was an error confirming the verification code: {result.Message}");
+                }
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("",
+                    "There was an error confirming the code, please check the verification code is correct and try again");
+            }
+
+            return View();
         }
 
     }

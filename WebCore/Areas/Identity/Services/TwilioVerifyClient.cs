@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.WebUtilities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,8 +33,25 @@ namespace WebCore.Areas.Identity.Services
             // this will throw if the response is not valid
             return JsonConvert.DeserializeObject<TwilioSendVerificationCodeResponse>(content);
         }
+        public async Task<TwilioCheckCodeResponse> CheckVerificationCode(int countryCode, string phoneNumber, string verificationCode)
+        {
+            var queryParams = new Dictionary<string, string>()
+           {
+               {"country_code", countryCode.ToString()},
+               {"phone_number", phoneNumber},
+               {"verification_code", verificationCode },
+           };
 
-        
-       
+            var url = QueryHelpers.AddQueryString("protected/json/phones/verification/check", queryParams);
+
+            var response = await _client.GetAsync(url);
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            // this will throw if the response is not valid
+            return JsonConvert.DeserializeObject<TwilioCheckCodeResponse>(content);
+        }
+
+
     }
 }

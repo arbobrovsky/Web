@@ -1,11 +1,10 @@
-﻿@page
-@model WebCore.Areas.Identity.Models.InputModel
+﻿@model WebCore.Areas.Identity.Models.InputModel
 
 
 
 <div class="row">
     <div class="col-md-6">
-        <form method="post">
+        <form method="post" asp-action="ConfirmPhone">
             <p>
                 We have sent a confirmation code to (@Model.DialingCode) @Model.PhoneNumber
                 Enter the code you receive to confirm your phone number.

@@ -17,21 +17,21 @@
                     <img class="d-block w-100" src="http://vikistyle.com.ua/wp-content/uploads/2016/04/chistka_lica.jpg" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Забронируйте свой визит через онлайн сервис и получите скидку в 5%</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        @*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>*@
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="http://vikistyle.com.ua/wp-content/uploads/2016/04/chistka_lica.jpg" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Забронируйте свой визит через онлайн сервис и получите скидку в 5%</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        @*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>*@
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="http://vikistyle.com.ua/wp-content/uploads/2016/04/chistka_lica.jpg" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Забронируйте свой визит через онлайн сервис и получите скидку в 5%</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        @*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>*@
                     </div>
                 </div>
             </div>
@@ -50,37 +50,35 @@
 <section id="selection-category" style="margin-top:10px; margin-bottom:30px;">
     <div class="container-fluid">
         <div class="top-cover center-block">
-                <div class="uk-flex-center" uk-grid>
+            <div class="uk-flex-center" uk-grid>
                 @*<div class="col-md-7 bg-danger">*@
-                    <div class="text--center" style="margin-bottom:30px">
-                        <h2 class="heading--title">Наши услуги</h2>
-                    </div>
-                    <div class="uk-child-width-1-4@s" ы uk-grid>
-                        @foreach (var categoryItem in Model.CategoryViewModels)
-                        {
-                            var img = @categoryItem.NameCategory + ".jpg";
-                            <div>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img src="~/images/@img"  class="img-responsive"/>
-                                        @*<img src="https://getuikit.com/docs/images/light.jpg" alt="">*@
-                                    </div>
-                                    <div class="uk-card-body">
-                                        <div class="text--center">
-                                            <h1 class="uk-card-title">
-                                                <a class="uk-link-text" style="font-size:24px" asp-action="Service" asp-controller="Home" asp-route-categoryId="@categoryItem.Id">
-                                                    @categoryItem.NameCategory
-                                                </a>
-                                            </h1>
-                                        </div>
+                <div class="text--center" style="margin-bottom:30px">
+                    <h2 class="heading--title">Наши услуги</h2>
+                </div>
+                <div class="uk-child-width-1-4@s" ы uk-grid>
+                    @foreach (var categoryItem in Model.CategoryViewModels)
+                    {
+                        var img = @categoryItem.NameCategory + ".jpg";
+                        <div>
+                            <div class="uk-card uk-card-default">
+                                <div class="uk-card-media-top">
+                                    <img src="~/images/@img" class="img-responsive" />
+                                    @*<img src="https://getuikit.com/docs/images/light.jpg" alt="">*@
+                                </div>
+                                <div class="uk-card-body">
+                                    <div class="text--center">
+                                        <h1 class="uk-card-title">
+                                            <a class="uk-link-text" style="font-size:24px" asp-action="Service" asp-controller="Home" asp-route-categoryId="@categoryItem.Id">
+                                                @categoryItem.NameCategory
+                                            </a>
+                                        </h1>
                                     </div>
                                 </div>
                             </div>
-                        }
-                </div>
+                        </div>
+                    }
                 </div>
             </div>
-
         </div>
 
     </div>
@@ -91,7 +89,7 @@
         <div class="row">
             <div class="heading text--center">
                 <h2 class="heading--title">Следите за нашим Instagram</h2>
-                <p class="heading--desc">Duis aute irure dolor in reprehenderit volupte velit esse cillum dolore eu fugiat pariatursint occaecat cupidatat non proident culpa.</p>
+                <p class="heading--desc">В нашем салоне инстаграм обновляется каждый день </p>
 
                 <div uk-slider="center: true">
                     <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">

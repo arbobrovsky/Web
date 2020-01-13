@@ -150,7 +150,7 @@
                 <div class="flex-row d-flex">
                     <button id="btnBack" type="button" style="display:none;" class="btn btn-dark" onclick="">Назад</button>
                     <button id="btnNext" type="button" class="btn btn-success disabled">Далее</button>
-                    <button id="btnComplite" style="display:block;" class="uk-button uk-button-secondary uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Подтвердить заказ!</button>
+                    <button id="btnComplite" style="display:none;" class="uk-button uk-button-secondary uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Подтвердить заказ!</button>
                 </div>
                 <!-- This is the modal -->
                 <div id="modal-example" uk-modal>
@@ -304,6 +304,7 @@
                         steps[i].style.display = "none";
                         document.getElementById("step-" + i).classList.toggle('success');
                         i -= 1;
+                        btnComplite.style.display = "none";
                         steps[i].style.display = "block";
                         if (i == 0) {
                             btnBack.style.display = "none";
