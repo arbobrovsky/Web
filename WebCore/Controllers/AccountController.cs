@@ -16,8 +16,7 @@ using WebCore.Areas.Identity.Services;
 
 namespace WebCore.Controllers
 {
-
-
+   
     public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -42,9 +41,22 @@ namespace WebCore.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            if (User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Manager");
+            }
+
             var user = await _userManager.GetUserAsync(HttpContext.User);
             var model = await _userServices.PersonalViewModel(user.Id);
             return View(model);
+        }
+
+        public async Task ParsePhone(string phone)
+        {
+            var identityUser = await _userManager.GetUserAsync(User);
+            identityUser.PhoneNumber = phone;
+            identityUser.PhoneNumberConfirmed = true;
+            var updateResult = await _userManager.UpdateAsync(identityUser);
         }
 
         [HttpGet]
@@ -60,8 +72,6 @@ namespace WebCore.Controllers
             {
                 List<string> role = new List<string>() { "user" };
                 User user = new User { Email = model.Email, UserName = model.Email, CustomerName = model.CustomerName };
-
-
                 var result = await _userManager.CreateAsync(user, model.Password);
                 await _userManager.AddToRolesAsync(user, role);
                 if (result.Succeeded)
@@ -79,6 +89,9 @@ namespace WebCore.Controllers
             }
             return View(model);
         }
+
+
+        public IActionResult PageNotFound() => View();
 
         [HttpGet]
         public IActionResult Login(string returnUrl = null)

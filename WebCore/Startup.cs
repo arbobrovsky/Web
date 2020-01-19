@@ -3,6 +3,7 @@ using BusinessLogic;
 using BusinessLogic.Implementations;
 using BusinessLogic.Interfaces;
 using Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,10 +34,22 @@ namespace WebCore
             {
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
-
             });
 
-            
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/Account/PageNotFound";
+                //options.Cookie.Name = "YourAppCookieName";
+                //options.Cookie.HttpOnly = true;
+                //options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                //options.LoginPath = "/Identity/Account/Login";
+                //// ReturnUrlParameter requires 
+                ////using Microsoft.AspNetCore.Authentication.Cookies;
+                //options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                //options.SlidingExpiration = true;
+            });
+
+
             UserConfiguration.IdentityOptionsConfigure(services);
             LogicManagementDb.ServiceDescriptors(services, Configuration);
 
@@ -65,11 +78,11 @@ namespace WebCore
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
             app.UseAuthentication();
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+         
             app.UseMvc();
             app.UseMvc(routes =>
             {

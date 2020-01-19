@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -95,19 +95,12 @@ namespace WebCore.Controllers
                 var addedRoles = roles.Except(userRoles);
                 // получаем роли, которые были удалены
                 var removedRoles = userRoles.Except(roles);
-
                 await _userManager.AddToRolesAsync(user, addedRoles);
-
                 await _userManager.RemoveFromRolesAsync(user, removedRoles);
-
                 return RedirectToAction("Users");
             }
 
             return NotFound();
-
-
-            
-
         }
 
         [HttpGet]
@@ -190,7 +183,7 @@ namespace WebCore.Controllers
                     url = Url.Action("PageEditor", "Manager", new { id = model.Id, pageType = PageType.Product.ToString() });
                 }
             }
-            
+
 
             return Redirect(url);
 

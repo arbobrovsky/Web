@@ -18,13 +18,28 @@
             <dd>
                 @if (!@Model.User.EmailConfirmed)
                 {
-                    <div>Ваш email не подтвержден</div> <a href="#">Подтвердить</a>
+                    <div>Ваш email не подтвержден</div>
+                    <a href="#modal-example" uk-toggle>Подтвердить</a>
                 }
             </dd>
             <dd>
                 @if (!@Model.User.PhoneNumberConfirmed)
                 {
-                <div>Ваш телефон не подтвержден</div><a href="#">Подтвердить</a>
+                    <div>Ваш телефон не подтвержден</div><a href="#modal-example" onclick="mask()" uk-toggle>Подтвердить</a>
+                    <div id="modal-example" uk-modal>
+                        <div class="uk-modal-dialog uk-modal-body">
+                            <form asp-action="ParsePhone">
+                                <h2 class="uk-modal-title">Добавить телефон</h2>
+                                <p>
+                                    <input type="text" id="inputPhone" name="phone" class="input-group" />
+                                </p>
+                                <p class="uk-text-right">
+                                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                    <button  class="uk-button uk-button-primary" type="submit">Save</button>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
                 }
             </dd>
         </dl>
@@ -76,4 +91,13 @@
         </ul>
     </div>
     </div>
+
+<script>
+    function mask() {
+        
+        $(document).ready(function ($) {
+            $("#inputPhone").mask("+375 (99) 999-99-99");
+        });
+    }
+</script>
 

@@ -10,6 +10,8 @@ using Presentation.Models;
 using WebCore.Models;
 using Data.Entityes;
 using Newtonsoft.Json;
+using WebCore.Areas.Identity;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebCore.Controllers
 {
@@ -17,13 +19,22 @@ namespace WebCore.Controllers
     {
         private readonly ServicesManager _serviceManager;
         private readonly DataManager _dataManager;
+        private readonly UserManager<User> _userManager;
+        private readonly ClientManager _clientManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly SignInManager<User> _signInManager;
 
-        
-        public HomeController(DataManager dataManager)
+
+        public HomeController(DataManager dataManager, UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _dataManager = dataManager;
             _serviceManager = new ServicesManager(_dataManager);
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _signInManager = signInManager;
+            _clientManager = new ClientManager(null, _roleManager, userManager);
         }
+
 
         public async Task<IActionResult> Index()
         {
@@ -91,6 +102,14 @@ namespace WebCore.Controllers
         public async Task<IActionResult> Order()
         {
             var model = await _serviceManager.OrderService.CreateNewOrderViewModel();
+            if (_signInManager.IsSignedIn(User)){
+
+                var identityUser = await _userManager.GetUserAsync(User);
+                model.CustomerName = identityUser.CustomerName;
+                model.CustomerEmail = identityUser.Email;
+                var phone = identityUser.PhoneNumber.ToString();
+                model.CustomerPhone = phone;
+            }
 
             return View(model);
         }
@@ -98,10 +117,6 @@ namespace WebCore.Controllers
         [HttpPost]
         public async Task<IActionResult> Order(OrderViewModel model)
         {
-            //if (await _serviceManager.OrderService.SearchOrder(model.CustomerPhone))
-            //{
-
-            //}
 
             if (ModelState.IsValid)
             {

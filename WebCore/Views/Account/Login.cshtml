@@ -1,5 +1,11 @@
 ﻿@model WebCore.Areas.Identity.Models.LoginViewModel
 
+@using Microsoft.AspNetCore.Identity
+@using Data.Entityes;
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -18,7 +24,7 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Email" class="control-label"></label>
-                    <input   asp-for="Email" class="form-control" />
+                    <input asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -26,7 +32,6 @@
                     <input asp-for="Password" class="form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
-
                 <div class="form-group">
                     <div class="checkbox">
                         <label>

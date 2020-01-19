@@ -1,4 +1,12 @@
-﻿
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#font-contact {
+    font-size: 14pt;
+}
+
+
 .logo {
     margin-left: 27%;
     margin-right: auto;
