@@ -21,6 +21,10 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Description)
+               @foreach (var item in Model.Products)
+               {
+                  @item.Name
+               }
             </dd>
         </dl>
     </div>

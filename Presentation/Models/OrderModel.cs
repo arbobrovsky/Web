@@ -15,7 +15,6 @@ namespace Presentation.Models
         public string CustomerName { get; set; }
 
         [Required(ErrorMessage = "Введите номер телефона")]
-        [DisplayFormat(DataFormatString = "{^[+][0-9] [(][0-9]{3}[)] [0-9]{3}[-][0-9]{2}[-][0-9]{2}$}", ApplyFormatInEditMode = true)]
         public string CustomerPhone { get; set; } //+7(803) 363-47-69
         [Required(ErrorMessage = "Введите Ваш Email")]
         public string CustomerEmail { get; set; }

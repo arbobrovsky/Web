@@ -245,6 +245,24 @@ namespace WebCore.Controllers
             return View(model);
         }
 
+       
+        public async Task<IActionResult> EditOrder(int id)
+        {
+            var orders = await _serviceManager.OrderService.Orders();
+            var model = orders.Where(x => x.Order.OrderId == id).FirstOrDefault();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditOrder(OrderList model)
+        {
+            
+
+            return View();
+        }
+
+
         [HttpGet]
         public async Task<IActionResult> Order()
         {

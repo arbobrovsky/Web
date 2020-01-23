@@ -107,7 +107,7 @@ namespace WebCore.Controllers
                 var identityUser = await _userManager.GetUserAsync(User);
                 model.CustomerName = identityUser.CustomerName;
                 model.CustomerEmail = identityUser.Email;
-                var phone = identityUser.PhoneNumber.ToString();
+                string phone = identityUser.PhoneNumber.ToString();
                 model.CustomerPhone = phone;
             }
 

@@ -1,0 +1,66 @@
+﻿@model Presentation.Models.OrderList
+
+@{
+    ViewData["Title"] = "EditOrder";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>EditOrder</h2>
+
+<h4>OrderList</h4>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <form asp-action="EditOrder">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <label asp-for="@Model.Order.CustomerName">Имя пользователя</label>
+                <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                <input class="uk-input" type="text" asp-for="@Model.Order.CustomerName" />
+
+                <label asp-for="@Model.Order.CustomerEmail">Email пользователя</label>
+                <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                <input class="uk-input" type="text" asp-for="@Model.Order.CustomerEmail" />
+
+                <label asp-for="@Model.Order.CustomerPhone">Телефон пользователя</label>
+                <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                <input class="uk-input" n type="text" asp-for="@Model.Order.CustomerPhone" />
+
+                <label asp-for="@Model.Order.CustomerComment">Комментарий пользователя</label>
+                <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                <textarea class="uk-input" asp-for="@Model.Order.CustomerComment"></textarea>
+
+                <h3>Список услуг</h3>
+                <table class="table-active">
+                    <thead>
+                        <tr>
+                            <th>Наименование</th>
+                            <th>Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var products in Model.Products)
+                        {
+                            <tr>
+                                <td>@products.ProductName</td>
+                                <td>@products.Price</td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

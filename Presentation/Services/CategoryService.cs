@@ -22,13 +22,16 @@ namespace Presentation.Services
         public async Task<CategoryViewModel> CategoryDBToViewModelById(int CategoryId = 0)
         {
             var categoryDbModel = await _dataManager.Categories.GetCategoryById(CategoryId);
+            
+           
 
             return new CategoryViewModel()
             {
                 Id = categoryDbModel.Id,
                 NameCategory = categoryDbModel.NameCategory,
-                Description = categoryDbModel.Description
-            };
+                Description = categoryDbModel.Description,
+                
+                };
         }
 
 
