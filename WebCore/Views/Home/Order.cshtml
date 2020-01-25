@@ -144,52 +144,45 @@
                     </div>
                 </div>
 
-                <div id="orderComplite" style="display:none;" class="step-4">
-                    <p>W'r did this GRAIT</p>
-                </div>
+             
                 <div class="flex-row d-flex">
                     <button id="btnBack" type="button" style="display:none;" class="btn btn-dark" onclick="">Назад</button>
                     <button id="btnNext" type="button" class="btn btn-success disabled">Далее</button>
                     <button id="btnComplite" style="display:none;" class="uk-button uk-button-secondary uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Подтвердить заказ!</button>
                 </div>
-                <!-- This is the modal -->
                 <div id="modal-example" uk-modal>
-                    <div class="uk-modal-dialog uk-modal-body">
+                    <div id="loadParametrs" class="uk-modal-dialog uk-modal-body">
                         <h2 class="uk-modal-title">Подтверждение записи</h2>
                         <table class="table">
                             <tbody>
                                 <tr>
                                     <td>Имя</td>
-                                    <td id="UserName">Артём</td>
+                                    <td id="UserName"></td>
                                 </tr>
                                 <tr>
                                     <td>Email</td>
-                                    <td id="UserEmail">arbobrovsky@gmail.com</td>
-
+                                    <td id="UserEmail"></td>
                                 </tr>
                                 <tr>
                                     <td>Телефон</td>
-                                    <td id="UserPhone">+375336347694</td>
-
+                                    <td id="UserPhone"></td>
                                 </tr>
                                 <tr>
                                     <td>Дата и время бронирования</td>
-                                    <td id="dataOrder">24.12.2019 12:35</td>
+                                    <td id="dataOrder"></td>
                                 </tr>
                                 <tr>
                                     <td>Список заказов:</td>
                                     <td id="orderList"></td>
                                 </tr>
-
                             </tbody>
                         </table>
-
                         <p class="flex-row d-flex">
                             <button class="uk-button uk-button-default uk-modal-close" type="button">Отменить заказ</button>
                             <button style="display:block;" type="submit" class="btn btn-success">Оформить заказ</button>
                         </p>
-
                     </div>
+                   
                 </div>
             </div>
         </div>
@@ -198,12 +191,11 @@
     </form>
 
     <script>
-
         var CompliteEnable = false;
         var listDisableHour = [];
         var parseModelDate = '@Html.Raw(Json.Serialize(Model.OrderingTime))';
         var dateObject = JSON.parse(parseModelDate);
-
+        var takeTime = "";
         $('#flatpickr1').flatpickr({
             minDate: "today",
             "locale": "ru",
@@ -216,11 +208,6 @@
                 DisableHour(dateStr);
             },
         });
-        //var _userName = "";
-        //var _userEmail = "";
-        //var _userPhone = "";
-        //var _userOrder = "";
-        //var _userList = "";
 
 
         let orderServices = document.getElementById("orderServices");
@@ -236,26 +223,41 @@
         let inputTime = document.getElementById("OrderTime");
         var btnTime = document.querySelectorAll("#btnClock");
 
+       
+        let loadParametrs = document.getElementById("loadParametrs");
 
-        let userName = document.getElementById("userName");
-        let userEmail = document.getElementById("userEmail");
-        let userPhone = document.getElementById("userPhone");
-        let dataOrder = document.getElementById("dataOrder");
-        let orderList = document.getElementById("orderList");
-
-
+        // var compliteTable = [userName.value, userEmail.value, userPhone.value, dataOrder.value];
+        var takeList = true;
         btnComplite.addEventListener("click", () => {
+           
+            let userName = document.getElementById("UserName");
+            console.log(userName.value);
+            let userEmail = document.getElementById("UserEmail");
+            let userPhone = document.getElementById("UserPhone");
+            let dataOrder = document.getElementById("dataOrder");
+            let orderList = document.getElementById("orderList");
+            userName.innerText = (document.getElementById("inputName").value);
+            userEmail.innerText = (document.getElementById("inputEmail").value);
+            userPhone.innerText = (document.getElementById("inputPhoneNumber").value);
+            dataOrder.innerText = (document.getElementById("flatpickr1").value) + " " + takeTime;
+     
             var checkboxes = [];
             console.log(checkboxes);
+            if (takeList) {
             $('input:checkbox:checked').each(function () {
                 checkboxes.push(this.value);
                 for (var i = 0; i < checkboxes.length; i++) {
+
                     var div = document.createElement('div');
                     div.innerText = checkboxes[i];
                 }
                 orderList.appendChild(div);
-            });
+                });
+            }
+            takeList = false;
         });
+
+
 
         var steps = [orderServices, orderTime, orderUserName, orderComplite];
         function comment_lenght() {
@@ -324,6 +326,7 @@
         }
 
         function getTime(value) {
+            takeTime = value.value;
             for (var i = 0; i < btnTime.length; i++) {
                 if (btnTime[i].className == 'btn btn-success valid') {
                     btnTime[i].className = 'btn btn-outline-success';
