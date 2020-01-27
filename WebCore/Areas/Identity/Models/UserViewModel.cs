@@ -11,11 +11,12 @@ namespace WebCore.Areas.Identity.Models
     {
 
         [Required]
+        [EmailAddress(ErrorMessage = "Введен некорректный email")]
         public string Email { get; set; }
 
         [Required]
         public string CustomerName { get; set; }
-       
+
         public string PhoneNumber { get; set; }
 
         [Required]
@@ -27,6 +28,9 @@ namespace WebCore.Areas.Identity.Models
         [Compare("Password", ErrorMessage = "Пароли не совпадают")]
         [DataType(DataType.Password)]
         public string PasswordConfirm { get; set; }
+
+        [Required]
+        public string Token { get; set; }
     }
 
 
@@ -43,7 +47,10 @@ namespace WebCore.Areas.Identity.Models
         [Display(Name = "Запомнить?")]
         public bool RememberMe { get; set; }
 
+        [Required]
+        public string Token { get; set; }
         public string ReturnUrl { get; set; }
+
     }
 
     public class ChangeRoleViewModel
@@ -95,6 +102,6 @@ namespace WebCore.Areas.Identity.Models
 
     }
 
-   
+
 
 }

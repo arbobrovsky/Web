@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WebCore.Areas.Identity.RepositoryUsers;
 using WebCore.Areas.Identity.Services;
+using WebCore.Models;
 using WebCore.Repository;
 
 namespace WebCore
@@ -53,17 +54,17 @@ namespace WebCore
             UserConfiguration.IdentityOptionsConfigure(services);
             LogicManagementDb.ServiceDescriptors(services, Configuration);
 
-            var apiKey = Configuration["Twilio:VerifyApiKey"];
+            //var apiKey = Configuration["Twilio:VerifyApiKey"];
 
-            services.AddHttpClient<TwilioVerifyClient>(client =>
-            {
-                client.BaseAddress = new Uri("https://api.authy.com/");
-                client.DefaultRequestHeaders.Add("X-Authy-API-Key", apiKey);
-            });
-
-
+            //services.AddHttpClient<TwilioVerifyClient>(client =>
+            //{
+            //    client.BaseAddress = new Uri("https://api.authy.com/");
+            //    client.DefaultRequestHeaders.Add("X-Authy-API-Key", apiKey);
+            //});
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-           services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.Configure<ReCAPTCHASettings>(Configuration.GetSection("GooglereCAPTCHA"));
+            services.AddTransient<GoogleReCaptchaService>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,7 +83,7 @@ namespace WebCore
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-         
+
             app.UseMvc();
             app.UseMvc(routes =>
             {
@@ -90,7 +91,7 @@ namespace WebCore
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-           
+
         }
     }
 }

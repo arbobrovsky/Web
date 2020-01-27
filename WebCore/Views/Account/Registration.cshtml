@@ -1,7 +1,30 @@
 ﻿@model WebCore.Areas.Identity.Models.RegistationViewModel
+@using Microsoft.Extensions.Options
+@inject IOptions<ReCAPTCHASettings> _googleReCAPTCHA
+
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <script>
+        var verifyCallback = function (response) {
+            console.log(response);
+            $('#Token').val(response);
+        };
+
+
+        var loginWidget;
+
+        var onloadCallback = function () {
+            loginWidget = grecaptcha.render('loginWidget', {
+                'sitekey': '@_googleReCAPTCHA.Value.ReCAPTCHA_Site_Key',
+                'theme': 'light',
+                'callback': verifyCallback,
+            });
+        }
+    </script>
+</head>
 <div class="container">
     <form asp-action="Registration">
         <h2>Форма для регистрации</h2>
@@ -27,13 +50,20 @@
             <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <input type="submit" value="Зарегистрироваться" class="btn btn-primary" />
+            <div id="loginWidget"></div>
+            <input type="hidden" value="" asp-for="Token" />
         </div>
 
+
+
+        <div class="form-group">
+            <input type="submit" value="Зарегистрироваться" class="btn btn-primary" />
+        </div>
     </form>
 </div>
-<script>
-    $(document).ready(function ($) {
-        $("#inputPhoneNumber").mask("+375 (99) 999-99-99");
-    });
-</script>
+
+@section Scripts{
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async defer>
+    </script>
+}

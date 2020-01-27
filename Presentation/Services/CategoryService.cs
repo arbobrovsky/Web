@@ -22,16 +22,14 @@ namespace Presentation.Services
         public async Task<CategoryViewModel> CategoryDBToViewModelById(int CategoryId = 0)
         {
             var categoryDbModel = await _dataManager.Categories.GetCategoryById(CategoryId);
-            
-           
 
             return new CategoryViewModel()
             {
                 Id = categoryDbModel.Id,
                 NameCategory = categoryDbModel.NameCategory,
                 Description = categoryDbModel.Description,
-                
-                };
+
+            };
         }
 
 
@@ -71,7 +69,11 @@ namespace Presentation.Services
             List<CategoryViewModel> CategoryList = new List<CategoryViewModel>();
             foreach (var item in categoryes)
             {
-                CategoryList.Add(new CategoryViewModel { Id = item.Id, NameCategory = item.NameCategory, Description = item.Description });
+                CategoryList.Add(new CategoryViewModel {
+                    Id = item.Id,
+                    NameCategory = item.NameCategory,
+                    Description = item.Description
+                });
             }
 
             return CategoryList;

@@ -13,10 +13,11 @@ using Presentation.Services;
 using WebCore.Areas.Identity;
 using WebCore.Areas.Identity.Models;
 using WebCore.Areas.Identity.Services;
+using WebCore.Models;
 
 namespace WebCore.Controllers
 {
-   
+
     public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -25,17 +26,24 @@ namespace WebCore.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly EFDBContext _context;
         private readonly TwilioVerifyClient _client;
+        private readonly GoogleReCaptchaService _googleReCaptchaService;
 
-        public AccountController(TwilioVerifyClient client, EFDBContext context, UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(EFDBContext context,
+            UserManager<User> userManager,
+            SignInManager<User> signInManager,
+            RoleManager<IdentityRole> roleManager,
+            GoogleReCaptchaService googleReCaptchaService
+            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _context = context;
             _userServices = new ClientManager(_context, _roleManager, userManager);
-            _client = client;
+            _googleReCaptchaService = googleReCaptchaService;
 
         }
+
 
         [Authorize]
         [HttpGet]
@@ -68,6 +76,15 @@ namespace WebCore.Controllers
         [HttpPost]
         public async Task<IActionResult> Registration(RegistationViewModel model)
         {
+            var GoogleReCaptha = _googleReCaptchaService.VerifyreCaptcha(model.Token);
+
+            if (!GoogleReCaptha.Result.success) // && GoogleReCaptha.Result.Score <= 0.5
+            {
+                ModelState.AddModelError(string.Empty, "Подтвердите капчу");
+                return View(model);
+            }
+
+
             if (ModelState.IsValid)
             {
                 List<string> role = new List<string>() { "user" };
@@ -96,6 +113,7 @@ namespace WebCore.Controllers
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
         {
+
             return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
         [HttpGet]
@@ -108,6 +126,15 @@ namespace WebCore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            var GoogleReCaptha = _googleReCaptchaService.VerifyreCaptcha(model.Token);
+
+            if (!GoogleReCaptha.Result.success) // && GoogleReCaptha.Result.Score <= 0.5
+            {
+
+                ModelState.AddModelError(string.Empty, "Подтвердите капчу");
+                return View(model);
+            }
+
             if (ModelState.IsValid)
             {
 
@@ -161,41 +188,33 @@ namespace WebCore.Controllers
 
         }
 
-        public IActionResult VerifyPhone()
-        {
-            return View();
-        }
 
+        //[HttpPost]
+        //public async Task<IActionResult> OnPostAsync(InputModel Input)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View("VerifyPhone");
+        //    }
+        //    //try
+        //    //{
+        //    var result = await _client.StartVerification(Input.DialingCode, Input.PhoneNumber);
+        //    if (result.Success)
+        //    {
 
+        //        return RedirectToAction("ConfirmPhone", new { Input.DialingCode, Input.PhoneNumber });
+        //    }
 
+        //    ModelState.AddModelError("", $"There was an error sending the verification code: {result.Message}");
+        //    //}
+        //    //catch (Exception)
+        //    //{
+        //    //    ModelState.AddModelError("",
+        //    //        "There was an error sending the verification code, please check the phone number is correct and try again");
+        //    //}
 
-
-        [HttpPost]
-        public async Task<IActionResult> OnPostAsync(InputModel Input)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View("VerifyPhone");
-            }
-            //try
-            //{
-            var result = await _client.StartVerification(Input.DialingCode, Input.PhoneNumber);
-            if (result.Success)
-            {
-
-                return RedirectToAction("ConfirmPhone", new { Input.DialingCode, Input.PhoneNumber });
-            }
-
-            ModelState.AddModelError("", $"There was an error sending the verification code: {result.Message}");
-            //}
-            //catch (Exception)
-            //{
-            //    ModelState.AddModelError("",
-            //        "There was an error sending the verification code, please check the phone number is correct and try again");
-            //}
-
-            return View("VerifyPhone");
-        }
+        //    return View("VerifyPhone");
+        //}
 
 
 
