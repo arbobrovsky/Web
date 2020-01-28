@@ -28,12 +28,13 @@ namespace BusinessLogic.Implementations
 
         public async Task<IEnumerable<Category>> GetAllCategories()
         {
-            return await _context.Categories.ToListAsync();
+          
+                return await _context.Categories.ToListAsync();
         }
 
         public async Task<Category> GetCategoryById(int? categorytId)
         {
-            return await _context.Categories.FirstOrDefaultAsync(x => x.Id == categorytId);
+                return await _context.Categories.FirstOrDefaultAsync(x => x.Id == categorytId);
         }
 
         public void SaveCategory(Category achieve)

@@ -42,7 +42,7 @@ namespace WebCore.Controllers
 
             return View(model);
         }
-       
+
         public async Task<IActionResult> Testing()
         {
             return View(await _dataManager.Products.GetAllProducts(true));
@@ -66,8 +66,8 @@ namespace WebCore.Controllers
             {
                 return NotFound();
             }
-
-            return View(await _serviceManager.Categories.CategoryDBToViewModelById(categoryId));
+            var model = await _serviceManager.Categories.CategoryDBToViewModelById(categoryId);
+            return View(model);
         }
 
 
@@ -102,7 +102,8 @@ namespace WebCore.Controllers
         public async Task<IActionResult> Order()
         {
             var model = await _serviceManager.OrderService.CreateNewOrderViewModel();
-            if (_signInManager.IsSignedIn(User)){
+            if (_signInManager.IsSignedIn(User))
+            {
 
                 var identityUser = await _userManager.GetUserAsync(User);
                 model.CustomerName = identityUser.CustomerName;
@@ -125,7 +126,7 @@ namespace WebCore.Controllers
             else
             {
                 await _serviceManager.OrderService.SaveOrderModelToDb(model);
-           
+
             }
             return RedirectToAction("Index");
         }

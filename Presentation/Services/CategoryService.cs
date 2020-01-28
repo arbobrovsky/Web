@@ -22,13 +22,25 @@ namespace Presentation.Services
         public async Task<CategoryViewModel> CategoryDBToViewModelById(int CategoryId = 0)
         {
             var categoryDbModel = await _dataManager.Categories.GetCategoryById(CategoryId);
-
+            var products = await _dataManager.Products.GetAllProducts();
+            var model = new List<ProductViewOrder>();
+            foreach (var item in products)
+            {
+                if (item.CategoryId == CategoryId)
+                {
+                    model.Add(new ProductViewOrder { Id = item.Id,
+                        Name = item.ProductName,
+                        Price = item.Price,
+                        Description = item.Description
+                    });
+                }
+            }
             return new CategoryViewModel()
             {
                 Id = categoryDbModel.Id,
                 NameCategory = categoryDbModel.NameCategory,
                 Description = categoryDbModel.Description,
-
+                Products = model
             };
         }
 
@@ -69,7 +81,8 @@ namespace Presentation.Services
             List<CategoryViewModel> CategoryList = new List<CategoryViewModel>();
             foreach (var item in categoryes)
             {
-                CategoryList.Add(new CategoryViewModel {
+                CategoryList.Add(new CategoryViewModel
+                {
                     Id = item.Id,
                     NameCategory = item.NameCategory,
                     Description = item.Description

@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Presentation.Models
 {
-    public class OrderViewModel 
+    public class OrderViewModel
     {
         public int OrderId { get; set; }
 
@@ -41,8 +41,6 @@ namespace Presentation.Models
         public bool TermsAccepted { get; set; }
     }
 
-
-
     public class OrderList
     {
         public Order Order { get; set; }
@@ -51,13 +49,13 @@ namespace Presentation.Models
 
     public class OrderWorkTIme
     {
-        public DateTime OrderingDate  { get; set; }
-        public int TimeWasted {  get; set; }
+        public DateTime OrderingDate { get; set; }
+        public int TimeWasted { get; set; }
     }
 
     public class OrderAmoutAndTime
     {
-        public int TimeWasted{ get; set; }
+        public int TimeWasted { get; set; }
         public decimal Price { get; set; }
     }
 

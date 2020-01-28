@@ -8,26 +8,31 @@
 @{
     var img = Model.NameCategory + ".jpg";
 
-    <div>
+<div>
 
-        <div class="uk-height-large uk-background-cover uk-light uk-flex uk-flex-top" style="margin-top:20px; background-image:url('/images/Galereya/dark.jpg');">
-            <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">@Model.NameCategory</h1>
-        </div>
-
-        <dl class="dl-horizontal">
-            <dt>
-                @Model.NameCategory
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-               @foreach (var item in Model.Products)
-               {
-                  @item.Name
-               }
-            </dd>
-        </dl>
+    <div class="uk-height-large uk-background-cover uk-light uk-flex uk-flex-top" style="margin-top:20px; color:black; background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq95jkI1iGIOlRNVcs9Sv_hUmxnRAoZTOiizjjAAT4kuMFBlf9Hg&s');">
+        <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">@Model.NameCategory</h1>
     </div>
+
+    <div class="container">
+        <div class="text--center uk-padding">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="pricing-panel">
+                        <div class="pricing--content">
+                            <h4 class="pricing--heading">@product.Name</h4>
+                            <div class="pricing--divider"></div>
+                            <span class="price">@product.Price &#8381 </span>
+                        </div>
+
+                    </div>
+                }
+         
+            <div class="divider--line"></div>
+        </div>
+    </div>
+</div>
+
 
     <section id="selection-instagram" class=" pb-100 ">
         <div class="container">

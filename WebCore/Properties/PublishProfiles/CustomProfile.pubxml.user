@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgGaTbItQDk2dQoNS1A7nfgAAAAACAAAAAAAQZgAAAAEAACAAAACxwWs/E7/GOlASOgxAyAH7or2bQYsTmu/P/sHg+LPIVgAAAAAOgAAAAAIAACAAAAD8tauDyoFd2S2Y0iIJlXjWc5NYG4Vo3npvN56bosmwiyAAAACnLy6lwTog0PjJyee4pcrg/qxeRMG2wSP7hUwGQJKaVUAAAABFeZ+7KMOUzukOZDNVNpFR/wvRcBjy5njyFWzd8vW+hIeLLFdfpEAmdSXpiSEVjH86XEBTXiIvs4TUtfiZYS7H</EncryptedPassword>
+    <_PublishTargetUrl>ftp://Lotusbuyty.somee.com/www.Lotusbuyty.somee.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>01/28/2020 23:57:46</publishTime>
+    </File>
+    <File Include="BusinessLogic.dll">
+      <publishTime>01/28/2020 22:49:38</publishTime>
+    </File>
+    <File Include="BusinessLogic.pdb">
+      <publishTime>01/28/2020 22:49:38</publishTime>
+    </File>
+    <File Include="Cake.Issues.EsLint.dll">
+      <publishTime>05/30/2019 20:17:22</publishTime>
+    </File>
+    <File Include="Data.dll">
+      <publishTime>01/28/2020 22:49:35</publishTime>
+    </File>
+    <File Include="Data.pdb">
+      <publishTime>01/28/2020 22:49:35</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>09/24/2019 19:57:52</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Connections.Abstractions.dll">
+      <publishTime>06/29/2018 22:55:48</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Server.Kestrel.Core.dll">
+      <publishTime>06/29/2018 22:55:48</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll">
+      <publishTime>06/29/2018 22:55:48</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>07/23/2019 17:31:34</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>07/23/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>04/18/2019 01:55:54</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.dll">
+      <publishTime>04/18/2019 01:55:46</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Relational.dll">
+      <publishTime>04/18/2019 01:57:04</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.SqlServer.dll">
+      <publishTime>04/18/2019 01:55:18</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
+      <publishTime>05/10/2018 19:35:44</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Logging.dll">
+      <publishTime>05/10/2018 19:36:18</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Tokens.dll">
+      <publishTime>05/10/2018 19:42:50</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
+      <publishTime>09/24/2019 19:57:20</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
+      <publishTime>09/24/2019 19:57:24</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
+      <publishTime>09/24/2019 19:57:28</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
+      <publishTime>09/24/2019 19:57:26</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>09/24/2019 19:57:22</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
+      <publishTime>09/24/2019 19:57:20</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
+      <publishTime>09/24/2019 19:57:30</publishTime>
+    </File>
+    <File Include="Microsoft.Win32.SystemEvents.dll">
+      <publishTime>11/15/2019 08:36:56</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.Bson.dll">
+      <publishTime>11/27/2018 23:10:18</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>04/22/2019 01:06:16</publishTime>
+    </File>
+    <File Include="NuGet.Frameworks.dll">
+      <publishTime>07/23/2019 17:30:25</publishTime>
+    </File>
+    <File Include="Presentation.dll">
+      <publishTime>01/28/2020 22:49:39</publishTime>
+    </File>
+    <File Include="Presentation.pdb">
+      <publishTime>01/28/2020 22:49:39</publishTime>
+    </File>
+    <File Include="Remotion.Linq.dll">
+      <publishTime>06/02/2018 22:25:00</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll">
+      <publishTime>09/18/2018 19:38:14</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll">
+      <publishTime>11/15/2019 08:53:58</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll">
+      <publishTime>09/18/2018 19:38:14</publishTime>
+    </File>
+    <File Include="System.Composition.AttributedModel.dll">
+      <publishTime>07/23/2019 17:34:31</publishTime>
+    </File>
+    <File Include="System.Composition.Convention.dll">
+      <publishTime>07/23/2019 17:34:31</publishTime>
+    </File>
+    <File Include="System.Composition.Hosting.dll">
+      <publishTime>07/23/2019 17:34:31</publishTime>
+    </File>
+    <File Include="System.Composition.Runtime.dll">
+      <publishTime>07/23/2019 17:34:31</publishTime>
+    </File>
+    <File Include="System.Composition.TypedParts.dll">
+      <publishTime>07/23/2019 17:34:31</publishTime>
+    </File>
+    <File Include="System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>09/18/2018 19:38:16</publishTime>
+    </File>
+    <File Include="System.Drawing.Common.dll">
+      <publishTime>09/18/2018 19:38:14</publishTime>
+    </File>
+    <File Include="System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>05/10/2018 19:34:28</publishTime>
+    </File>
+    <File Include="System.Interactive.Async.dll">
+      <publishTime>07/23/2019 17:34:28</publishTime>
+    </File>
+    <File Include="Twilio.dll">
+      <publishTime>08/01/2020 20:50:52</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>01/29/2020 00:05:48</publishTime>
+    </File>
+    <File Include="WebCore.deps.json">
+      <publishTime>01/29/2020 00:05:48</publishTime>
+    </File>
+    <File Include="WebCore.dll">
+      <publishTime>01/29/2020 00:05:42</publishTime>
+    </File>
+    <File Include="WebCore.pdb">
+      <publishTime>01/29/2020 00:05:42</publishTime>
+    </File>
+    <File Include="WebCore.runtimeconfig.json">
+      <publishTime>01/29/2020 00:05:48</publishTime>
+    </File>
+    <File Include="WebCore.Views.dll">
+      <publishTime>01/29/2020 00:05:42</publishTime>
+    </File>
+    <File Include="WebCore.Views.pdb">
+      <publishTime>01/29/2020 00:05:42</publishTime>
+    </File>
+    <File Include="wwwroot/css/Gallery.css">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/css/Order.css">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.css">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.min.css">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/css/WebCore.css">
+      <publishTime>01/19/2020 19:00:35</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>01/19/2020 19:00:35</publishTime>
+    </File>
+    <File Include="wwwroot/images/banner1.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/banner2.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/banner3.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/Galereya/1.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/Galereya/12.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/Galereya/2.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/Galereya/dark.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/Galereya/Брови.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/Galereya/Волосы.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/Galereya/Наращивание ресниц.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/Galereya/Эстетическая косметология.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/icons/logo-default-231x49.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/icons/logo-default-231x49.png">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/icons/map-marker.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/light - Копировать.jpg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/images/logo.svg">
+      <publishTime>01/19/2020 19:00:35</publishTime>
+    </File>
+    <File Include="wwwroot/images/Брови.jpg">
+      <publishTime>01/02/2020 16:33:14</publishTime>
+    </File>
+    <File Include="wwwroot/images/Волосы.jpg">
+      <publishTime>01/02/2020 16:30:09</publishTime>
+    </File>
+    <File Include="wwwroot/images/Косметология.jpg">
+      <publishTime>01/02/2020 16:10:11</publishTime>
+    </File>
+    <File Include="wwwroot/images/Наращивание ресниц.jpg">
+      <publishTime>01/02/2020 16:22:21</publishTime>
+    </File>
+    <File Include="wwwroot/js/Gallery.js">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/js/GalleryTags.js">
+      <publishTime>01/02/2020 16:05:16</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.js">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.min.js">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/js/WebCore.js">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/js/yandex.js">
+      <publishTime>09/12/2019 13:28:24</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/datatables-select.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/datatables-select.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/datatables.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/datatables.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/directives.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/directives.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/flag.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/flag.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/rating.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/rating.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/zmd.hierarchical-display.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/addons/zmd.hierarchical-display.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/bootstrap.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/bootstrap.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/mdb.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/mdb.lite.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/mdb.lite.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/mdb.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/modules/animations-extended.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/modules/animations-extended.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/style.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/css/style.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/datatables-select.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/datatables-select.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/datatables.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/datatables.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/imagesloaded.pkgd.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/jquery.zmd.hierarchical-display.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/jquery.zmd.hierarchical-display.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/masonry.pkgd.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/progressBar.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/progressBar.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/rating.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/addons/rating.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/bootstrap.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/bootstrap.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/jquery-3.4.1.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/bs-custom-file-input.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/chart.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/enhanced-modals.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/forms-free.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/jquery.easing.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/scrolling-navbar.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/treeview.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/velocity.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/velocity.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/waves.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/js/modules/wow.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/flatpickr/flatpickr.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/flatpickr/flatpickr.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/flatpickr/ru.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/.bower.json">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/.bower.json">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/.bower.json">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.js">
+      <publishTime>01/28/2020 23:57:24</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.mask.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/LICENSE.txt">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/css/icon-font.min.css">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/js/svgembedder.min.js">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/alarm.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/apartment.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/arrow-down-circle.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/arrow-down.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/arrow-left-circle.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/arrow-left.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/arrow-right-circle.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/arrow-right.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/arrow-up-circle.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/arrow-up.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/bicycle.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/bold.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/book.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/bookmark.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/briefcase.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/bubble.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/bug.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/bullhorn.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/bus.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/calendar-full.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/camera-video.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/camera.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/car.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/cart.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/chart-bars.svg">
+      <publishTime>09/12/2019 11:28:43</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/checkmark-circle.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/chevron-down-circle.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/chevron-down.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/chevron-left-circle.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/chevron-left.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/chevron-right-circle.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/chevron-right.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/chevron-up-circle.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/chevron-up.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/circle-minus.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/clock.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/cloud-check.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/cloud-download.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/cloud-sync.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/cloud-upload.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/cloud.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/code.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/coffee-cup.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/cog.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/construction.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/crop.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/cross-circle.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/cross.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/database.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/diamond.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/dice.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/dinner.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/direction-ltr.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/direction-rtl.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/download.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/drop.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/earth.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/enter-down.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/enter.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/envelope.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/exit-up.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/exit.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/eye.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/file-add.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/file-empty.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/film-play.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/flag.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/frame-contract.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/frame-expand.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/funnel.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/gift.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/graduation-hat.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/hand.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/heart-pulse.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/heart.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/highlight.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/history.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/home.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/hourglass.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/inbox.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/indent-decrease.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/indent-increase.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/italic.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/keyboard.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/laptop-phone.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/laptop.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/layers.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/leaf.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/license.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/lighter.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/line-spacing.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/linearicons.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/link.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/list.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/location.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/lock.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/magic-wand.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/magnifier.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/map-marker.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/map.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/menu-circle.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/menu.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/mic.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/moon.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/move.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/music-note.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/mustache.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/neutral.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/page-break.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/paperclip.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/paw.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/pencil.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/phone-handset.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/phone.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/picture.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/pie-chart.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/pilcrow.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/plus-circle.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/pointer-down.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/pointer-left.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/pointer-right.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/pointer-up.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/poop.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/power-switch.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/printer.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/pushpin.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/question-circle.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/redo.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/rocket.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/sad.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/screen.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/select.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/shirt.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/smartphone.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/smile.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/sort-alpha-asc.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/sort-amount-asc.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/spell-check.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/star-empty.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/star-half.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/star.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/store.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/strikethrough.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/sun.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/sync.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/tablet.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/tag.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/text-align-center.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/text-align-justify.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/text-align-left.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/text-align-right.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/text-format-remove.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/text-format.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/text-size.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/thumbs-down.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/thumbs-up.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/train.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/trash.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/underline.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/undo.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/unlink.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/upload.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/user.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/users.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/volume-high.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/volume-low.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/volume-medium.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/volume.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/warning.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/Linearicons/SVG/wheelchair.svg">
+      <publishTime>09/12/2019 11:28:44</publishTime>
+    </File>
+    <File Include="wwwroot/lib/uikit-3.1.7/css/uikit-rtl.css">
+      <publishTime>09/12/2019 15:48:59</publishTime>
+    </File>
+    <File Include="wwwroot/lib/uikit-3.1.7/css/uikit-rtl.min.css">
+      <publishTime>03/12/2019 08:59:12</publishTime>
+    </File>
+    <File Include="wwwroot/lib/uikit-3.1.7/css/uikit.css">
+      <publishTime>09/12/2019 15:47:29</publishTime>
+    </File>
+    <File Include="wwwroot/lib/uikit-3.1.7/css/uikit.min.css">
+      <publishTime>03/12/2019 08:59:04</publishTime>
+    </File>
+    <File Include="wwwroot/lib/uikit-3.1.7/js/uikit-icons.js">
+      <publishTime>03/12/2019 08:59:06</publishTime>
+    </File>
+    <File Include="wwwroot/lib/uikit-3.1.7/js/uikit-icons.min.js">
+      <publishTime>03/12/2019 08:59:06</publishTime>
+    </File>
+    <File Include="wwwroot/lib/uikit-3.1.7/js/uikit.js">
+      <publishTime>03/12/2019 08:59:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/uikit-3.1.7/js/uikit.min.js">
+      <publishTime>03/12/2019 08:59:10</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
