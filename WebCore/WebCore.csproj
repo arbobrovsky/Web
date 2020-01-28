@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
     <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
+    <UserSecretsId>5d593eaa-c415-429b-b766-d18915d52648</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
