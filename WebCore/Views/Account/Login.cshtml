@@ -12,13 +12,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
-    <script>
+    <script asp-append-version="true">
         var verifyCallback = function (response) {
             console.log(response);
             $('#Token').val(response);
@@ -29,7 +27,7 @@
 
         var onloadCallback = function () {
             loginWidget = grecaptcha.render('loginWidget', {
-                'sitekey': '@_googleReCAPTCHA.Value.ReCAPTCHA_Site_Key',
+                'sitekey': '6LeM49IUAAAAAAvcrOzytkQQ0hIerzl-OLU8t1u8',
                 'theme': 'light',
                 'callback': verifyCallback,
             });
@@ -77,7 +75,7 @@
 
  
 
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    <script  asp-append-version="true" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
             async defer>
     </script>
 

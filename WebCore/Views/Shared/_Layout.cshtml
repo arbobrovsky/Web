@@ -4,24 +4,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Оформление заказа</title>
 
-    <environment include="Development">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap&subset=cyrillic" rel="stylesheet">
-        <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
-        <link href="~/lib/uikit-3.1.7/css/uikit.css" rel="stylesheet" />
-        <link href="~/lib/uikit-3.1.7/css/uikit-rtl.css" rel="stylesheet" />
-        <link href="~/css/WebCore.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-        <link href="~/css/Order.css" rel="stylesheet" />
-        <script src="~/lib/bootstrap/js/jquery-3.4.1.min.js"></script>
-        <script src="~/lib/jquery/dist/jquery.mask.js"></script>
+    <link asp-append-version="true" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap&subset=cyrillic" rel="stylesheet">
+    <link asp-append-version="true" rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <link asp-append-version="true" href="~/lib/uikit-3.1.7/css/uikit.css" rel="stylesheet" />
+    <link asp-append-version="true" href="~/lib/uikit-3.1.7/css/uikit-rtl.css" rel="stylesheet" />
+    <link asp-append-version="true" href="~/css/WebCore.css" rel="stylesheet" />
+    <link asp-append-version="true" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link asp-append-version="true" href="~/css/Order.css" rel="stylesheet" />
+    <script asp-append-version="true" src="~/lib/bootstrap/js/jquery-3.4.1.min.js"></script>
+    <script asp-append-version="true" src="~/lib/jquery/dist/jquery.mask.js"></script>
 
-        <link href="~/lib/flatpickr/flatpickr.min.css" rel="stylesheet" />
-        <script src="~/lib/flatpickr/flatpickr.js"></script>
-        <script src="~/lib/flatpickr/ru.js"></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link asp-append-version="true" href="~/lib/flatpickr/flatpickr.min.css" rel="stylesheet" />
+    <script asp-append-version="true" src="~/lib/flatpickr/flatpickr.js"></script>
+    <script asp-append-version="true" src="~/lib/flatpickr/ru.js"></script>
+    <script asp-append-version="true" src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-    </environment>
-    
+    @*<environment include="Development">
+
+
+        </environment>*@
+
     <style>
         .field-validation-error {
             color: #b94a48;
@@ -77,26 +79,29 @@
 
     </div>
 
-    <environment include="Development">
+    <script asp-append-version="true" src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script asp-append-version="true" src="~/js/WebCore.js"></script>
+    <script asp-append-version="true" src="~/lib/uikit-3.1.7/js/uikit.js"></script>
+    <script asp-append-version="true" src="~/lib/uikit-3.1.7/js/uikit-icons.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
-        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
-        <script src="~/js/WebCore.js"></script>
-        <script src="~/lib/uikit-3.1.7/js/uikit.js"></script>
-        <script src="~/lib/uikit-3.1.7/js/uikit-icons.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
+    @*<environment include="Development">
 
 
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
+        </environment>*@
 
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    <script asp-append-version="true" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+    </script>
+    <script  src="~/js/site.min.js" asp-append-version="true"></script>
+    @*<environment exclude="Development">
+
+
+
+    </environment>*@
     <partial name="_ValidationScriptsPartial" />
 
     @RenderSection("Scripts", required: false)

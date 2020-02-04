@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width" />
     <title>Lotus Beauty</title>
 
-    <environment include="Development">
+    <link asp-append-version="true"  href="~/lib/Linearicons/css/icon-font.min.css" rel="stylesheet" />
+    <link asp-append-version="true"  href="~/css/WebCore.css" rel="stylesheet" />
+    <link  asp-append-version="true" href="~/css/Gallery.css" rel="stylesheet" />
+    <link  asp-append-version="true" href="~/lib/uikit-3.1.7/css/uikit.css" rel="stylesheet" />
+    <script   asp-append-version="true" src="https://api-maps.yandex.ru/2.1/?apikey=<dd935371-b821-429e-a5ca-49ccdad3684e>&lang=ru_RU" type="text/javascript"></script>
+    <link asp-append-version="true" href="~/lib/uikit-3.1.7/css/uikit-rtl.css" rel="stylesheet" />
+    <link rel="stylesheet"
+          asp-fallback-href="~/lib/bootstrap/css/bootstrap.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    <link  asp-append-version="true" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link asp-append-version="true" href="https://kit-pro.fontawesome.com/releases/v5.11.2/css/pro.min.css" rel="stylesheet">
+    @*<environment include="Development">
 
-        <link href="~/lib/Linearicons/css/icon-font.min.css" rel="stylesheet" />
-        <link href="~/css/WebCore.css" rel="stylesheet" />
-        <link href="~/css/Gallery.css" rel="stylesheet" />
-        <link href="~/lib/uikit-3.1.7/css/uikit.css" rel="stylesheet" />
-        <script src="https://api-maps.yandex.ru/2.1/?apikey=<dd935371-b821-429e-a5ca-49ccdad3684e>&lang=ru_RU" type="text/javascript"></script>
-        <link href="~/lib/uikit-3.1.7/css/uikit-rtl.css" rel="stylesheet" />
-        <link rel="stylesheet"
-              asp-fallback-href="~/lib/bootstrap/css/bootstrap.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-        <link href="https://kit-pro.fontawesome.com/releases/v5.11.2/css/pro.min.css" rel="stylesheet">
-    </environment>
+
+    </environment>*@
 </head>
 
 <body>
@@ -120,21 +121,21 @@
         </div>
     </footer>
 
-    <script src="~/js/yandex.js"></script>
-
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
-        <script src="~/lib/uikit-3.1.7/js/uikit.js"></script>
-        <script src="~/lib/uikit-3.1.7/js/uikit-icons.js"></script>
+    <script asp-append-version="true" src="~/js/yandex.js"></script>
+    <script asp-append-version="true" src="~/lib/jquery/dist/jquery.js"></script>
+    <script asp-append-version="true" src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script asp-append-version="true" src="~/lib/uikit-3.1.7/js/uikit.js"></script>
+    <script asp-append-version="true" src="~/lib/uikit-3.1.7/js/uikit-icons.js"></script>
 
 
-        <script type='text/jаvascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-        <script src="~/lib/Linearicons/js/svgembedder.min.js"></script>
-        <script src="~/js/GalleryTags.js"></script>
-        <script src="~/js/Gallery.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
+    <script asp-append-version="true" type='text/jаvascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script asp-append-version="true" src="~/lib/Linearicons/js/svgembedder.min.js"></script>
+    <script asp-append-version="true" src="~/js/GalleryTags.js"></script>
+    <script asp-append-version="true" src="~/js/Gallery.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*<environment include="Development">
+
+    </environment>*@
     @RenderSection("Scripts", required: false)
 
 
